@@ -1,0 +1,173 @@
+/* Login Page Styles */
+.login-page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+    background-color: #fff;
+}
+
+.login-body-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    flex: 1;
+    width: 100%;
+    min-height: 0;
+    /* Important for grid nesting */
+}
+
+.login-image-section {
+    position: relative;
+    background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80');
+    /* Business/Office placeholder */
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+}
+
+.login-image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 30, 60, 0.7);
+    /* Enterprise blue overlay */
+}
+
+/* Form Section */
+.login-form-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 2rem;
+    background-color: #fff;
+}
+
+.login-content-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-form-container {
+    width: 100%;
+    max-width: 420px;
+    background: #fff;
+    /* Ensure it's white */
+    /* padding could be removed if container is just structure */
+}
+
+.brand-subtitle {
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 0.875rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    font-weight: 600;
+}
+
+.login-title {
+    font-family: 'serif';
+    /* Or specific font if available */
+    font-size: 2.5rem;
+    color: #003366;
+    /* Enterprise Dark Blue */
+    margin-bottom: 2rem;
+    text-align: center;
+    font-weight: 500;
+}
+
+.form-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.forgot-password-link {
+    text-align: right;
+    margin-top: 0.5rem;
+}
+
+.forgot-password-link a {
+    color: #666;
+    text-decoration: none;
+    font-size: 0.875rem;
+}
+
+.forgot-password-link a:hover {
+    text-decoration: underline;
+}
+
+.submit-btn-wrapper {
+    margin-top: 1rem;
+}
+
+.enroll-text {
+    margin-top: 1.5rem;
+    text-align: center;
+    color: #666;
+    font-size: 0.95rem;
+}
+
+.enroll-link {
+    color: #003366;
+    font-weight: 600;
+    text-decoration: none;
+    margin-left: 0.5rem;
+    border-bottom: 1px solid currentColor;
+}
+
+.enroll-link:hover {
+    opacity: 0.8;
+}
+
+.login-submit-btn {
+    background-color: #003366 !important;
+    /* Enterprise Blue */
+    color: white !important;
+    padding: 12px 0 !important;
+    border-radius: 0 !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.login-submit-btn:hover {
+    background-color: #002244 !important;
+    /* Darker blue */
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .login-body-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .login-image-section {
+        display: block;
+        height: 250px;
+        min-height: 250px;
+    }
+
+    .login-form-section {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .login-image-section {
+        display: none;
+        /* Often better to hide large decorative images on mobile to save space */
+    }
+
+    .login-title {
+        font-size: 2rem;
+    }
+}
