@@ -18,7 +18,14 @@ const Header: React.FC<HeaderProps> = ({ onSidebarToggle }) => {
   const [isMobileNavOpen, setIsMobileNavOpen] = React.useState(false);
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
 
-  const isLoggedIn = window.location.pathname.includes('/admin') || window.location.pathname.includes('/client');
+  const isLoggedIn =
+    window.location.pathname.includes('/admin') ||
+    window.location.pathname.includes('/client') ||
+    window.location.pathname.includes('/my-account') ||
+    window.location.pathname.includes('/report-library') ||
+    window.location.pathname.includes('/ask-judy-ai') ||
+    window.location.pathname.includes('/billing') ||
+    window.location.pathname.includes('/faq');
   const size = 20;
 
   const handleSearchToggle = () => {
@@ -35,16 +42,6 @@ const Header: React.FC<HeaderProps> = ({ onSidebarToggle }) => {
 
   return (
     <header className="app-header">
-      {/* Top Utility Bar (Mobile Only Arrow) */}
-      <div className="header-top-bar">
-        <button
-          className="header-menu-arrow"
-          onClick={() => setIsMobileNavOpen(!isMobileNavOpen)}
-          aria-label="Toggle top menu"
-        >
-          {isMobileNavOpen ? <LuChevronUp size={20} /> : <LuChevronDown size={20} />}
-        </button>
-      </div>
       <div className="container">
         <div className="header-container">
           {/* Logo Section */}
@@ -68,7 +65,14 @@ const Header: React.FC<HeaderProps> = ({ onSidebarToggle }) => {
               />
             </div>
 
-
+            {/* Top Menu Toggle (Arrow) - Mobile Only */}
+            <button
+              className="header-menu-arrow"
+              onClick={() => setIsMobileNavOpen(!isMobileNavOpen)}
+              aria-label="Toggle top menu"
+            >
+              {isMobileNavOpen ? <LuChevronUp size={24} /> : <LuChevronDown size={24} />}
+            </button>
           </div>
 
 

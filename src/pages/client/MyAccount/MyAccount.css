@@ -1,0 +1,258 @@
+.my-account-container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    /* Reset padding to allow full width background handling if needed, 
+       but keeping inner content padded via sections */
+}
+
+.account-header-wrapper {
+    background-color: #E8EEF1;
+    padding: 3.6rem 4rem;
+    display: flex;
+    margin-bottom: 90px;
+}
+
+.account-title-box {
+    background-color: white;
+    padding: 15px 28px;
+    display: inline-block;
+    text-align: center;
+    position: absolute;
+}
+
+.account-title {
+    font-family: var(--ff-items-trial);
+    font-size: 4.5rem;
+    font-weight: 400;
+    margin: 0;
+    text-align: left;
+    line-height: 1;
+    color: #000;
+}
+
+.account-section {
+    margin-bottom: 3rem;
+}
+
+.form-grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.custom-form .MuiOutlinedInput-root {
+    border-radius: 0;
+    font-family: var(--ff-montserrat);
+    background-color: white;
+    /* Ensure visible against gray if needed, though inputs usually white/transparent */
+}
+
+/* Ensure label matches site font if not covered by Input.css */
+.input-label {
+    font-family: var(--ff-montserrat);
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #000;
+}
+
+.section-header {
+    font-family: var(--ff-montserrat);
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    color: #111;
+}
+
+/* Reports Selection Table Look */
+.reports-table-header {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.reports-table-header span {
+    font-family: var(--ff-montserrat);
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.reports-table-header span:not(:first-child) {
+    text-align: center;
+}
+
+.report-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.date-cell {
+    color: #ccc;
+    display: flex;
+    justify-content: center;
+}
+
+.date-text {
+    font-family: var(--ff-montserrat);
+    font-size: 0.9rem;
+    color: #333;
+    text-align: center;
+}
+
+.date-icon {
+    font-size: 1.2rem;
+}
+
+.form-actions-right {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+/* Team Table */
+.team-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.team-table td {
+    padding: 1rem;
+    font-family: var(--ff-montserrat);
+    font-size: 0.9rem;
+    color: #666;
+    border-bottom: 1px solid #eee;
+}
+
+.highlight-row {
+    background-color: #E8EEF1;
+    /* Light blue highlight */
+}
+
+.action-link {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #0D3E54;
+    cursor: pointer;
+    margin-right: 1.5rem;
+    text-transform: uppercase;
+}
+
+
+/* ... existing styles ... */
+
+/* Responsive Breakpoints */
+
+/* Large Desktop (1600px+) */
+@media (min-width: 1600px) {
+    .account-content-wrapper {
+        max-width: 1600px;
+        margin: 0 auto;
+    }
+}
+
+/* Tablet / Small Desktop (< 1200px) */
+@media (max-width: 1200px) {
+    .account-header-wrapper {
+        padding: 3rem 3rem;
+        margin-bottom: 70px;
+    }
+
+    .account-title {
+        font-size: 3.5rem;
+    }
+}
+
+/* Tablet (< 991px) */
+@media (max-width: 991px) {
+    .account-header-wrapper {
+        padding: 2.5rem 2rem;
+        margin-bottom: 60px;
+    }
+
+    .account-title {
+        font-size: 3rem;
+    }
+
+    .account-content-wrapper {
+        padding: 2rem !important;
+        /* Override inline style if possible, else rely on class specificity/clean up inline later */
+    }
+}
+
+/* Mobile (< 768px) */
+@media (max-width: 768px) {
+
+    /* Header adjustments */
+    .account-header-wrapper {
+        padding: 2rem 1.5rem;
+        margin-bottom: 50px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .account-title-box {
+        position: relative;
+        /* Stop absolute positioning overlap on small screens if needed, or keep it if design demands. 
+                               But purely relative flow is safer for mobile stacking. */
+        display: block;
+        width: 100%;
+        padding: 10px 15px;
+        margin-top: -30px;
+        /* Pull up slightly if design requires 'tab' look, implies logic change */
+        /* Let's keep the tab look but scale it */
+    }
+
+    .account-title {
+        font-size: 2.2rem;
+    }
+
+    /* Form Grids */
+    .form-grid-2 {
+        grid-template-columns: 1fr;
+        /* Stack inputs */
+        gap: 1rem;
+    }
+
+    /* Reports Table - Force scroll for custom grid */
+    .account-section {
+        overflow-x: auto;
+    }
+
+    .reports-table-header,
+    .report-row {
+        min-width: 600px;
+        /* Ensure rows don't squash too much */
+    }
+
+    /* Buttons */
+    .form-actions-right {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    .form-actions-right button {
+        width: 100%;
+    }
+
+    .account-content-wrapper {
+        padding: 1.5rem 1rem !important;
+    }
+}
+
+/* Small Mobile (< 480px) */
+@media (max-width: 480px) {
+    .account-title {
+        font-size: 1.8rem;
+    }
+}

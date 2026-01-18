@@ -1,0 +1,99 @@
+/* PageHeader Styles */
+.page-header-wrapper {
+    background-color: #E8EEF1;
+    padding: 3.6rem 4rem;
+    display: flex;
+    margin-bottom: 90px;
+    position: relative;
+    /* Ensure child can position absolutely within/relative to flow */
+}
+
+.page-title-box {
+    background-color: white;
+    padding: 15px 28px;
+    display: inline-block;
+    text-align: center;
+    position: absolute;
+    /* Position it to overlap or sit nicely */
+    bottom: -30px;
+    left: 4rem;
+    /* Optional: Adds subtle lift */
+}
+
+.page-title {
+    font-family: var(--ff-items-trial);
+    font-size: 4.5rem;
+    font-weight: 400;
+    margin: 0;
+    text-align: left;
+    line-height: 1;
+    color: #000;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1200px) {
+    .page-header-wrapper {
+        padding: 3rem 3rem;
+        margin-bottom: 70px;
+    }
+
+    .page-title-box {
+        left: 3rem;
+    }
+
+    .page-title {
+        font-size: 3.5rem;
+    }
+}
+
+@media (max-width: 991px) {
+    .page-header-wrapper {
+        padding: 2.5rem 2rem;
+        margin-bottom: 60px;
+    }
+
+    .page-title-box {
+        left: 2rem;
+    }
+
+    .page-title {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .page-header-wrapper {
+        padding: 2rem 1.5rem;
+        margin-bottom: 50px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .page-title-box {
+        position: relative;
+        display: block;
+        width: 100%;
+        padding: 10px 15px;
+        margin-top: -30px;
+        /* Pull up slightly if design requires 'tab' look */
+        bottom: auto;
+        left: auto;
+        margin-left: 0;
+        box-shadow: none;
+        /* Simplify checking on mobile */
+        margin-bottom: -40px;
+        /* Counteract wrapper padding or flow if needed */
+        top: 20px;
+        /* Push down slightly relative to normal flow if not absolute */
+    }
+
+    .page-title {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-title {
+        font-size: 1.8rem;
+    }
+}

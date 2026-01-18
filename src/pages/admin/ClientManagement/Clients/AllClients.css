@@ -1,10 +1,10 @@
-/* Users Page Styles - Reuses structure from AllClients */
-.users-page {
+/* All Clients Page Styles */
+.all-clients-page {
     background-color: #fff;
     min-height: 100%;
 }
 
-.users-content {
+.all-clients-content {
     max-width: 100%;
     margin: 0 auto;
     padding: 0 4rem 4rem 4rem;
@@ -12,13 +12,13 @@
 
 /* Large Desktop (1600px+) */
 @media (min-width: 1600px) {
-    .users-content {
+    .all-clients-content {
         max-width: 1600px;
     }
 }
 
 /* Toolbar */
-.users-toolbar {
+.clients-toolbar {
     margin-bottom: 2rem;
     display: flex;
     flex-direction: column;
@@ -90,17 +90,19 @@
 }
 
 /* Table */
-.users-table-container {
+.clients-table-container {
     overflow-x: auto;
+    /* Allow scroll on small screens */
 }
 
-.users-table {
+.clients-table {
     width: 100%;
     border-collapse: collapse;
     min-width: 900px;
+    /* Ensure table doesn't squash too much */
 }
 
-.users-table th {
+.clients-table th {
     text-align: left;
     font-family: var(--ff-montserrat);
     font-size: 0.75rem;
@@ -112,7 +114,7 @@
     color: #000;
 }
 
-.users-table td {
+.clients-table td {
     padding: 1.5rem 0;
     border-bottom: 1px solid #eee;
     font-family: var(--ff-montserrat);
@@ -134,13 +136,13 @@
 }
 
 /* Responsive */
-@media (max-width: 1024px) {
-    .users-content {
+/* Responsive */
+
+/* Tablet (< 991px) */
+@media (max-width: 991px) {
+    .all-clients-content {
         padding: 0 2rem 2rem 2rem;
     }
-}
-
-@media (max-width: 991px) {
 
     .filter-label,
     .filter-dropdown {
@@ -149,11 +151,13 @@
     }
 }
 
+/* Mobile (< 768px) */
 @media (max-width: 768px) {
-    .users-content {
+    .all-clients-content {
         padding: 0 1rem 2rem 1rem;
     }
 
+    /* Stack toolbar */
     .toolbar-top {
         flex-direction: column;
         align-items: flex-start;
@@ -180,8 +184,9 @@
     }
 }
 
+/* Small Mobile (< 480px) */
 @media (max-width: 480px) {
-    .users-table td {
+    .clients-table td {
         font-size: 0.85rem;
         padding: 1rem 0;
     }

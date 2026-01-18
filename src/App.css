@@ -409,6 +409,10 @@ h6,
 
 /* ~-~-~-~-~-~-~-~-~-~ full width adjustments ~-~-~-~-~-~-~-~-~-~ */
 
+.report-library-container {
+    padding: 2rem 4rem;
+}
+
 /* --------- header logo adjustments --------- */
 .header-logo {
     a {

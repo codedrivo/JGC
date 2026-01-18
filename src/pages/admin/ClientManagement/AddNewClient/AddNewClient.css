@@ -2,7 +2,6 @@
 .add-client-container {
     background-color: #fff;
     min-height: 100%;
-    position: relative;
     /* Reset margins/padding from previous attempts */
     margin: 0;
     padding: 0;
@@ -10,56 +9,24 @@
     /* Prevent horizontal scroll from full-width banner */
 }
 
-/* The Grey Banner Strip */
-.top-grey-banner {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 160px;
-    /* Adjust height based on design */
-    background-color: #E7ECEE;
-    z-index: 0;
-}
-
 /* Content Wrapper to constrain width and center */
 .client-content-wrapper {
-    position: relative;
-    /* Sit above banner */
-    z-index: 1;
-    max-width: 1200px;
+    max-width: 100%;
     margin: 0 auto;
-    padding: 60px 4rem 4rem 4rem;
-    /* Top padding pushes content down into banner area */
+    padding: 0 4rem 4rem 4rem;
 }
 
-.title-section {
-    background-color: #fff;
-    width: fit-content;
-    padding: 1rem 2rem 0 0;
-    /* Right padding to create some space before grey starts */
-    margin-bottom: 3rem;
-    /* Create the 'tab' look if needed, or just a block */
-}
-
-.page-title {
-    font-family: var(--ff-items-trial);
-    font-size: 4rem;
-    /* Large font size */
-    font-weight: 400;
-    color: #000;
-    margin: 0;
-    line-height: 1;
+/* Large Desktop (1600px+) */
+@media (min-width: 1600px) {
+    .client-content-wrapper {
+        max-width: 1600px;
+    }
 }
 
 /* Responsive adjustment */
 @media (max-width: 1024px) {
     .client-content-wrapper {
-        padding: 40px 2rem 2rem 2rem;
-    }
-
-    .page-title {
-        font-size: 3rem;
+        padding: 0 2rem 2rem 2rem;
     }
 }
 
@@ -103,48 +70,57 @@
 /* Reports Selection Table */
 .reports-section {
     margin-top: 3rem;
-    border-top: 1px solid #ddd;
-    padding-top: 2rem;
+    padding-top: 1rem;
 }
 
 .reports-header {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
+    grid-template-columns: 2.5fr 1fr 1fr 1fr;
     padding-bottom: 1rem;
-    border-bottom: 1px solid #ddd;
-    margin-bottom: 1rem;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 0;
+    align-items: center;
 }
 
 .header-label {
     font-family: var(--ff-montserrat);
-    font-size: 0.75rem;
-    font-weight: 600;
+    font-size: 0.8rem;
+    font-weight: 700;
     text-transform: uppercase;
     color: #111;
+    letter-spacing: 1px;
+}
+
+.header-label:not(:first-child) {
+    text-align: center;
 }
 
 .report-row {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
+    grid-template-columns: 2.5fr 1fr 1fr 1fr;
     align-items: center;
-    padding: 1rem 0;
+    padding: 1.2rem 0;
     border-bottom: 1px solid #eee;
 }
 
+/* Report Name Column */
 .report-name-col {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 1.5rem;
 }
 
 .checkbox-custom {
-    width: 18px;
-    height: 18px;
+    width: 22px;
+    height: 22px;
     border: 2px solid #000;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
+    transition: background-color 0.2s;
+    background-color: transparent;
 }
 
 .checkbox-custom.checked {
@@ -154,37 +130,41 @@
 
 .report-name {
     font-family: var(--ff-montserrat);
-    font-size: 0.9rem;
+    font-size: 1rem;
     color: #111;
+    font-weight: 400;
 }
 
+/* Date Columns */
 .date-col {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    padding-right: 1rem;
+    justify-content: center;
 }
 
-.date-input-wrapper {
-    position: relative;
-    width: 100%;
-    max-width: 100px;
+/* The dotted circle placeholder */
+.date-placeholder {
+    width: 42px;
+    height: 42px;
+    border: 2px dashed #bbb;
+    border-radius: 50%;
     display: flex;
     align-items: center;
-    gap: 5px;
-    border-bottom: 1px dashed #ccc;
-    padding-bottom: 2px;
+    justify-content: center;
+    color: #999;
 }
 
+.date-placeholder .calendar-icon {
+    font-size: 1.2rem;
+    color: #999;
+}
+
+/* Filled Date Text */
 .date-text {
     font-family: var(--ff-montserrat);
-    font-size: 0.85rem;
-    flex: 1;
-}
-
-.calendar-icon {
-    color: #999;
-    cursor: pointer;
+    font-size: 0.95rem;
+    color: #000;
+    font-weight: 500;
 }
 
 /* Action Buttons */
@@ -274,6 +254,73 @@
     font-size: 0.85rem;
 }
 
-.member-row:last-child {
-    border-bottom: none;
+/* Tablet (< 991px) */
+@media (max-width: 991px) {
+    .client-content-wrapper {
+        padding: 0 2rem 2rem 2rem;
+    }
+
+    .form-grid-2 {
+        gap: 1rem;
+    }
+}
+
+/* Mobile (< 768px) */
+@media (max-width: 768px) {
+    .client-content-wrapper {
+        padding: 0 1rem 2rem 1rem;
+    }
+
+    /* Stack Form Inputs */
+    .form-grid-2 {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    /* Allow horizontal scroll for Reports Table */
+    .reports-section {
+        overflow-x: auto;
+    }
+
+    .reports-header,
+    .report-row {
+        min-width: 700px;
+        /* Force min-width to prevent squashing */
+    }
+
+    /* Force scroll for Team Members */
+    .team-members-section {
+        overflow-x: auto;
+    }
+
+    .member-row,
+    .team-header {
+        min-width: 600px;
+    }
+
+    /* Actions */
+    .form-actions {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    .btn-save,
+    .btn-discard {
+        width: 100%;
+    }
+
+    .btn-send-wrapper button {
+        width: 100%;
+    }
+}
+
+/* Small Mobile (< 480px) */
+@media (max-width: 480px) {
+
+    /* Adjust font sizes if needed */
+    .header-label,
+    .report-name,
+    .member-row {
+        font-size: 0.85rem;
+    }
 }

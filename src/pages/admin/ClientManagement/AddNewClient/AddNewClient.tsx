@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { BsCheck, BsCalendar3 } from "react-icons/bs";
+import PageHeader from "../../../../components/common/PageHeader/PageHeader";
 import "./AddNewClient.css";
 
 const initialReports = [
@@ -26,16 +27,10 @@ const AddNewClient = () => {
 
     return (
         <div className="add-client-container">
-            {/* Grey Banner Background */}
-            <div className="top-grey-banner"></div>
+            <PageHeader title="Add New Client" />
 
             {/* Main Content Area */}
             <div className="client-content-wrapper">
-
-                {/* Title Section (White Background) */}
-                <div className="title-section">
-                    <h1 className="page-title">Add New Client</h1>
-                </div>
 
                 {/* Client Info Form */}
                 <form>
@@ -76,31 +71,31 @@ const AddNewClient = () => {
 
                             {/* Date Columns */}
                             <div className="date-col">
-                                <div className="date-input-wrapper">
-                                    {report.checked ? (
-                                        <span className="date-text">{report.startDate}</span>
-                                    ) : (
+                                {report.startDate ? (
+                                    <span className="date-text">{report.startDate}</span>
+                                ) : (
+                                    <div className="date-placeholder">
                                         <BsCalendar3 className="calendar-icon" />
-                                    )}
-                                </div>
+                                    </div>
+                                )}
                             </div>
                             <div className="date-col">
-                                <div className="date-input-wrapper">
-                                    {report.checked ? (
-                                        <span className="date-text">{report.viewDate}</span>
-                                    ) : (
+                                {report.viewDate ? (
+                                    <span className="date-text">{report.viewDate}</span>
+                                ) : (
+                                    <div className="date-placeholder">
                                         <BsCalendar3 className="calendar-icon" />
-                                    )}
-                                </div>
+                                    </div>
+                                )}
                             </div>
                             <div className="date-col">
-                                <div className="date-input-wrapper">
-                                    {report.checked ? (
-                                        <span className="date-text">{report.endDate}</span>
-                                    ) : (
+                                {report.endDate ? (
+                                    <span className="date-text">{report.endDate}</span>
+                                ) : (
+                                    <div className="date-placeholder">
                                         <BsCalendar3 className="calendar-icon" />
-                                    )}
-                                </div>
+                                    </div>
+                                )}
                             </div>
                         </div>
                     ))}

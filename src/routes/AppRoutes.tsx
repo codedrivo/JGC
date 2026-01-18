@@ -19,14 +19,13 @@ import TestPage from '../pages/TestPage';
 // Admin Pages
 import Dashboard from '../pages/admin/Dashboard/Dashboard';
 import ReportLibrary from '../pages/admin/ReportLibrary/ReportLibrary';
-import Clients from '../pages/admin/ClientManagement/Clients/Clients';
+import AllClients from '../pages/admin/ClientManagement/Clients/AllClients';
 import Users from '../pages/admin/Users/Users';
 import Billing from '../pages/admin/Billing/Billing';
 import Analytics from '../pages/admin/Analytics/Analytics';
 import AddNewClient from '../pages/admin/ClientManagement/AddNewClient/AddNewClient';
 
 // Client Pages
-import ClientReportLibrary from '../pages/client/ReportLibrary/ReportLibrary';
 import MyAccount from '../pages/client/MyAccount/MyAccount';
 import ClientBilling from '../pages/client/Billing/Billing';
 import FAQ from '../pages/client/FAQ/FAQ';
@@ -59,20 +58,24 @@ const AppRoutes = () => {
         <Route path="dashboard" element={<Dashboard />} />
         <Route path="reports" element={<ReportLibrary />} />
         <Route path="client-management/add-new" element={<AddNewClient />} />
-        <Route path="client-management/clients" element={<Clients />} />
-        <Route path="clients" element={<Clients />} />
-        <Route path="users" element={<Users />} />
+        <Route path="client-management/clients" element={<AllClients />} />
+        <Route path="client-management/users" element={<Users />} />
         <Route path="billing" element={<Billing />} />
         <Route path="analytics" element={<Analytics />} />
       </Route>
 
-      {/* Client Routes */}
+      {/* Client Routes - Top level paths as per Sidebar */}
+      <Route element={<ClientLayout />}>
+        <Route path="/report-library" element={<ReportLibrary />} />
+        <Route path="/ask-judy-ai" element={<div>Ask Judy AI Page</div>} />
+        <Route path="/my-account" element={<MyAccount />} />
+        <Route path="/billing" element={<ClientBilling />} />
+        <Route path="/faq" element={<FAQ />} />
+      </Route>
+
       <Route path="/client" element={<ClientLayout />}>
-        <Route index element={<ClientReportLibrary />} />
-        <Route path="reports" element={<ClientReportLibrary />} />
-        <Route path="account" element={<MyAccount />} />
-        <Route path="billing" element={<ClientBilling />} />
-        <Route path="faq" element={<FAQ />} />
+        {/* Keep /client base routes just in case, but redirect or map to same components */}
+        <Route index element={<ReportLibrary />} />
       </Route>
 
       {/* 404 Not Found */}
