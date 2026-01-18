@@ -1,20 +1,37 @@
+import React, { useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import Header from '../components/layout/Header/Header';
 import Sidebar from '../components/layout/Sidebar/Sidebar';
-import Footer from '../components/layout/Footer/Footer';
-import PageWrapper from '../components/layout/PageWrapper/PageWrapper';
+import './AdminLayout.css';
 
 const AdminLayout = () => {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+
+  const closeSidebar = () => {
+    setIsSidebarOpen(false);
+  };
+
   return (
     <div className="admin-layout">
-      <Header />
+      {/* Header at the top (Full Width) */}
+      <Header onSidebarToggle={toggleSidebar} />
+
+      {/* Main Container: Sidebar (Left) | Content (Right) */}
       <div className="admin-layout__container">
-        <Sidebar />
-        <PageWrapper>
+        <Sidebar isOpen={isSidebarOpen} onClose={closeSidebar} />
+        <main className="admin-main-content">
           <Outlet />
-        </PageWrapper>
+        </main>
+
+        {/* Mobile Overlay for Sidebar */}
+        {isSidebarOpen && (
+          <div className="sidebar-overlay" onClick={closeSidebar}></div>
+        )}
       </div>
-      <Footer />
     </div>
   );
 };

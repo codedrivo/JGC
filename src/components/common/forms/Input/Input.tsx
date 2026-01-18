@@ -27,7 +27,7 @@ export type InputTypes =
 
 export interface InputFieldProps {
   id?: string;
-  label: string;
+  label?: string; // ⭐ OPTIONAL
   labelIcon?: React.ReactNode | string;
   variant?: "outlined" | "filled" | "standard";
   type?: InputTypes;
@@ -72,10 +72,13 @@ const InputField: React.FC<InputFieldProps> = ({
 
   return (
     <div className={`custom-form ${className}`}>
-      <Typography component="label" htmlFor={id} className="input-label">
-        {renderLabelIcon()}
-        {label}
-      </Typography>
+      {/* ⭐ render only if label exists */}
+      {label && (
+        <Typography component="label" htmlFor={id} className="input-label">
+          {renderLabelIcon()}
+          {label}
+        </Typography>
+      )}
 
       {isPassword ? (
         <FormControl variant={variant} fullWidth={fullWidth}>

@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import './TestPage.css';
-import InputField from '../components/common/forms/Input/Input';
+
 
 const TestPage = () => {
     return (
@@ -57,25 +57,6 @@ const TestPage = () => {
                     </div>
                 </section>
 
-            </div>
-            <div className="form-holder">
-                <InputField
-                    label="Full Name"
-                    type="text"
-                    placeholder="Enter your name"
-                />
-
-                <InputField
-                    label="Email Address"
-                    type="email"
-                    placeholder="Enter your email"
-                />
-
-                <InputField
-                    label="Age"
-                    type="number"
-                    placeholder="Enter age"
-                />
             </div>
         </div>
     );

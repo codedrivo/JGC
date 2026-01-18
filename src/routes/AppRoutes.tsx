@@ -19,22 +19,25 @@ import TestPage from '../pages/TestPage';
 // Admin Pages
 import Dashboard from '../pages/admin/Dashboard/Dashboard';
 import ReportLibrary from '../pages/admin/ReportLibrary/ReportLibrary';
-import Clients from '../pages/admin/Clients/Clients';
+import Clients from '../pages/admin/ClientManagement/Clients/Clients';
 import Users from '../pages/admin/Users/Users';
 import Billing from '../pages/admin/Billing/Billing';
 import Analytics from '../pages/admin/Analytics/Analytics';
+import AddNewClient from '../pages/admin/ClientManagement/AddNewClient/AddNewClient';
 
 // Client Pages
 import ClientReportLibrary from '../pages/client/ReportLibrary/ReportLibrary';
 import MyAccount from '../pages/client/MyAccount/MyAccount';
 import ClientBilling from '../pages/client/Billing/Billing';
 import FAQ from '../pages/client/FAQ/FAQ';
+import GlobalSetup from '../pages/GlobalSetup';
 
 const AppRoutes = () => {
   return (
     <Routes>
       {/* Test Page Route */}
       <Route path="/test" element={<TestPage />} />
+      <Route path="/global-setup" element={<GlobalSetup />} />
 
       {/* Public Routes */}
       <Route path="/" element={<Home />} />
@@ -55,6 +58,8 @@ const AppRoutes = () => {
         <Route index element={<Dashboard />} />
         <Route path="dashboard" element={<Dashboard />} />
         <Route path="reports" element={<ReportLibrary />} />
+        <Route path="client-management/add-new" element={<AddNewClient />} />
+        <Route path="client-management/clients" element={<Clients />} />
         <Route path="clients" element={<Clients />} />
         <Route path="users" element={<Users />} />
         <Route path="billing" element={<Billing />} />

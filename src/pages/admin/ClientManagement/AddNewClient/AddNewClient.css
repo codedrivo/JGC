@@ -1,0 +1,279 @@
+/* Add New Client Page Styles */
+.add-client-container {
+    background-color: #fff;
+    min-height: 100%;
+    position: relative;
+    /* Reset margins/padding from previous attempts */
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    /* Prevent horizontal scroll from full-width banner */
+}
+
+/* The Grey Banner Strip */
+.top-grey-banner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 160px;
+    /* Adjust height based on design */
+    background-color: #E7ECEE;
+    z-index: 0;
+}
+
+/* Content Wrapper to constrain width and center */
+.client-content-wrapper {
+    position: relative;
+    /* Sit above banner */
+    z-index: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 4rem 4rem 4rem;
+    /* Top padding pushes content down into banner area */
+}
+
+.title-section {
+    background-color: #fff;
+    width: fit-content;
+    padding: 1rem 2rem 0 0;
+    /* Right padding to create some space before grey starts */
+    margin-bottom: 3rem;
+    /* Create the 'tab' look if needed, or just a block */
+}
+
+.page-title {
+    font-family: var(--ff-items-trial);
+    font-size: 4rem;
+    /* Large font size */
+    font-weight: 400;
+    color: #000;
+    margin: 0;
+    line-height: 1;
+}
+
+/* Responsive adjustment */
+@media (max-width: 1024px) {
+    .client-content-wrapper {
+        padding: 40px 2rem 2rem 2rem;
+    }
+
+    .page-title {
+        font-size: 3rem;
+    }
+}
+
+/* Form Grid */
+.form-grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-input,
+.form-select {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #ccc;
+    font-family: var(--ff-montserrat);
+    font-size: 0.85rem;
+    color: #333;
+    outline: none;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.form-input::placeholder {
+    color: #999;
+}
+
+.form-select {
+    background: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" width="18px" height="18px"><path d="M7 10l5 5 5-5z"/></svg>') no-repeat right 10px center;
+    background-color: #fff;
+    appearance: none;
+    cursor: pointer;
+}
+
+/* Reports Selection Table */
+.reports-section {
+    margin-top: 3rem;
+    border-top: 1px solid #ddd;
+    padding-top: 2rem;
+}
+
+.reports-header {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 1rem;
+}
+
+.header-label {
+    font-family: var(--ff-montserrat);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #111;
+}
+
+.report-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    align-items: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.report-name-col {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.checkbox-custom {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #000;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.checkbox-custom.checked {
+    background-color: #000;
+    color: #fff;
+}
+
+.report-name {
+    font-family: var(--ff-montserrat);
+    font-size: 0.9rem;
+    color: #111;
+}
+
+.date-col {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-right: 1rem;
+}
+
+.date-input-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 100px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    border-bottom: 1px dashed #ccc;
+    padding-bottom: 2px;
+}
+
+.date-text {
+    font-family: var(--ff-montserrat);
+    font-size: 0.85rem;
+    flex: 1;
+}
+
+.calendar-icon {
+    color: #999;
+    cursor: pointer;
+}
+
+/* Action Buttons */
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+}
+
+.btn-save {
+    background-color: #0D3E54;
+    color: #fff;
+    padding: 10px 30px;
+    border: none;
+    font-family: var(--ff-montserrat);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.btn-discard {
+    background-color: transparent;
+    color: #333;
+    padding: 10px 30px;
+    border: 1px solid #ccc;
+    font-family: var(--ff-montserrat);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+/* Account Admin Section */
+.account-admin-section {
+    margin-top: 2rem;
+}
+
+.section-title {
+    font-family: var(--ff-montserrat);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #111;
+    margin-bottom: 1.5rem;
+    letter-spacing: 1px;
+}
+
+.btn-send-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+/* Team Members Section */
+.team-members-section {
+    margin-top: 4rem;
+    border-top: 1px solid #ddd;
+    padding-top: 1.5rem;
+}
+
+.team-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+
+.user-count {
+    font-family: var(--ff-montserrat);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #111;
+}
+
+.member-row {
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr 1fr;
+    padding: 1rem 0;
+    border-bottom: 1px solid #eee;
+    color: #555;
+    font-family: var(--ff-montserrat);
+    font-size: 0.85rem;
+}
+
+.member-row:last-child {
+    border-bottom: none;
+}

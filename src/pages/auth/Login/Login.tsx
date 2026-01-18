@@ -4,6 +4,7 @@ import Footer from "../../../components/layout/Footer/Footer";
 import InputField from "../../../components/common/forms/Input/Input";
 import Button from "../../../components/common/Button/Button";
 import "./Login.css";
+import { Link } from "react-router-dom";
 
 const Login: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -47,28 +48,28 @@ const Login: React.FC = () => {
                 <div className="form-fields">
                   <InputField
                     id="email"
-                    label="EMAIL"
                     type="email"
                     fullWidth
                     value={formData.email}
                     onChange={handleChange}
-                    placeholder="name@example.com"
+                    placeholder="EMAIL"
                     variant="outlined"
+                    className="custom-input"
                   />
 
                   <div>
                     <InputField
                       id="password"
-                      label="PASSWORD"
                       type="password"
                       fullWidth
                       value={formData.password}
                       onChange={handleChange}
-                      placeholder="Enter your password"
+                      placeholder="PASSWORD"
                       variant="outlined"
+                      className="custom-input"
                     />
                     <div className="forgot-password-link">
-                      <a href="#forgot-password">Forgot Password?</a>
+                      <Link to="#forgot-password">Forgot Password?</Link>
                     </div>
                   </div>
                 </div>
