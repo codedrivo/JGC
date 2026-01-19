@@ -1,0 +1,105 @@
+/* Admin Layout Styles */
+.admin-layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.admin-layout__container {
+    display: flex;
+    flex: 1;
+    width: 100%;
+    max-width: 100%;
+}
+
+/* Main Content Area adjustments */
+.admin-main-content {
+    flex: 1;
+    background-color: #fff;
+    /* Generous padding as in design */
+    overflow-x: hidden;
+}
+
+/* Responsive Breakpoints */
+
+/* Medium Desktop (1366px - 1200px) */
+@media (max-width: 1366px) {
+    .admin-main-content {
+        padding: 2rem 3rem;
+    }
+}
+
+/* Small Desktop (1200px - 1024px) */
+@media (max-width: 1200px) {
+    .admin-main-content {
+        padding: 2rem;
+    }
+}
+
+/* Tablet (991px - 768px) */
+/* Note: Sidebar becomes Drawer at 1024px, so content expands to full width behind it */
+@media (max-width: 991px) {
+    .admin-main-content {
+        padding: 2rem 1.5rem;
+    }
+}
+
+/* Mobile (767px - 360px) */
+@media (max-width: 767px) {
+    .admin-main-content {
+        padding: 1.5rem 1rem;
+        /* Minimize padding on small screens to maximize content area */
+    }
+}
+
+/* Sidebar Overlay */
+.sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 990;
+    /* Below sidebar (1000) but above content */
+    animation: fadeIn 0.3s ease;
+}
+
+/* Sidebar Floating Toggle (Mobile Only) */
+.sidebar-fab-toggle {
+    display: none;
+    /* Hidden on desktop */
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-color: #0D3E54;
+    /* Sidebar Dark Blue */
+    color: white;
+    border: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    z-index: 980;
+    /* Above content, below overlay */
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.sidebar-fab-toggle:hover {
+    background-color: #003366;
+    transform: scale(1.05);
+}
+
+.sidebar-fab-toggle:active {
+    transform: scale(0.95);
+}
+
+@media (max-width: 1024px) {
+    .sidebar-fab-toggle {
+        display: flex;
+        /* Visible on tablet/mobile */
+    }
+}

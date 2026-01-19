@@ -1,0 +1,326 @@
+/* Add New Client Page Styles */
+.add-client-container {
+    background-color: #fff;
+    min-height: 100%;
+    /* Reset margins/padding from previous attempts */
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    /* Prevent horizontal scroll from full-width banner */
+}
+
+/* Content Wrapper to constrain width and center */
+.client-content-wrapper {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 4rem 4rem 4rem;
+}
+
+/* Large Desktop (1600px+) */
+@media (min-width: 1600px) {
+    .client-content-wrapper {
+        max-width: 1600px;
+    }
+}
+
+/* Responsive adjustment */
+@media (max-width: 1024px) {
+    .client-content-wrapper {
+        padding: 0 2rem 2rem 2rem;
+    }
+}
+
+/* Form Grid */
+.form-grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-input,
+.form-select {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #ccc;
+    font-family: var(--ff-montserrat);
+    font-size: 0.85rem;
+    color: #333;
+    outline: none;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.form-input::placeholder {
+    color: #999;
+}
+
+.form-select {
+    background: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black" width="18px" height="18px"><path d="M7 10l5 5 5-5z"/></svg>') no-repeat right 10px center;
+    background-color: #fff;
+    appearance: none;
+    cursor: pointer;
+}
+
+/* Reports Selection Table */
+.reports-section {
+    margin-top: 3rem;
+    padding-top: 1rem;
+}
+
+.reports-header {
+    display: grid;
+    grid-template-columns: 2.5fr 1fr 1fr 1fr;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 0;
+    align-items: center;
+}
+
+.header-label {
+    font-family: var(--ff-montserrat);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #111;
+    letter-spacing: 1px;
+}
+
+.header-label:not(:first-child) {
+    text-align: center;
+}
+
+.report-row {
+    display: grid;
+    grid-template-columns: 2.5fr 1fr 1fr 1fr;
+    align-items: center;
+    padding: 1.2rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+/* Report Name Column */
+.report-name-col {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.checkbox-custom {
+    width: 22px;
+    height: 22px;
+    border: 2px solid #000;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: background-color 0.2s;
+    background-color: transparent;
+}
+
+.checkbox-custom.checked {
+    background-color: #000;
+    color: #fff;
+}
+
+.report-name {
+    font-family: var(--ff-montserrat);
+    font-size: 1rem;
+    color: #111;
+    font-weight: 400;
+}
+
+/* Date Columns */
+.date-col {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* The dotted circle placeholder */
+.date-placeholder {
+    width: 42px;
+    height: 42px;
+    border: 2px dashed #bbb;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+}
+
+.date-placeholder .calendar-icon {
+    font-size: 1.2rem;
+    color: #999;
+}
+
+/* Filled Date Text */
+.date-text {
+    font-family: var(--ff-montserrat);
+    font-size: 0.95rem;
+    color: #000;
+    font-weight: 500;
+}
+
+/* Action Buttons */
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+}
+
+.btn-save {
+    background-color: #0D3E54;
+    color: #fff;
+    padding: 10px 30px;
+    border: none;
+    font-family: var(--ff-montserrat);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.btn-discard {
+    background-color: transparent;
+    color: #333;
+    padding: 10px 30px;
+    border: 1px solid #ccc;
+    font-family: var(--ff-montserrat);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+/* Account Admin Section */
+.account-admin-section {
+    margin-top: 2rem;
+}
+
+.section-title {
+    font-family: var(--ff-montserrat);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #111;
+    margin-bottom: 1.5rem;
+    letter-spacing: 1px;
+}
+
+.btn-send-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+/* Team Members Section */
+.team-members-section {
+    margin-top: 4rem;
+    border-top: 1px solid #ddd;
+    padding-top: 1.5rem;
+}
+
+.team-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+
+.user-count {
+    font-family: var(--ff-montserrat);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #111;
+}
+
+.member-row {
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr 1fr;
+    padding: 1rem 0;
+    border-bottom: 1px solid #eee;
+    color: #555;
+    font-family: var(--ff-montserrat);
+    font-size: 0.85rem;
+}
+
+/* Tablet (< 991px) */
+@media (max-width: 991px) {
+    .client-content-wrapper {
+        padding: 0 2rem 2rem 2rem;
+    }
+
+    .form-grid-2 {
+        gap: 1rem;
+    }
+}
+
+/* Mobile (< 768px) */
+@media (max-width: 768px) {
+    .client-content-wrapper {
+        padding: 0 1rem 2rem 1rem;
+    }
+
+    /* Stack Form Inputs */
+    .form-grid-2 {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    /* Allow horizontal scroll for Reports Table */
+    .reports-section {
+        overflow-x: auto;
+    }
+
+    .reports-header,
+    .report-row {
+        min-width: 700px;
+        /* Force min-width to prevent squashing */
+    }
+
+    /* Force scroll for Team Members */
+    .team-members-section {
+        overflow-x: auto;
+    }
+
+    .member-row,
+    .team-header {
+        min-width: 600px;
+    }
+
+    /* Actions */
+    .form-actions {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    .btn-save,
+    .btn-discard {
+        width: 100%;
+    }
+
+    .btn-send-wrapper button {
+        width: 100%;
+    }
+}
+
+/* Small Mobile (< 480px) */
+@media (max-width: 480px) {
+
+    /* Adjust font sizes if needed */
+    .header-label,
+    .report-name,
+    .member-row {
+        font-size: 0.85rem;
+    }
+}

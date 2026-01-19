@@ -1,42 +1,451 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+:root {
+    /* ~-~-~-~-~ colors ~-~-~-~-~ */
+    --color-accent: #0D3E54;
+    --color-primary: #0F3D54;
+    --color-red: #b82929;
+    --color-white: #fff;
+    --color-black: #000;
+    --color-grey: #aaa;
+    --color-skyblue: #e1f4f6;
+    /* ~-~-~-~-~ colors ~-~-~-~-~ */
+
+    /* ~-~-~-~-~ declare font family & weight ~-~-~-~-~ */
+    --ff-montserrat: "Montserrat", sans-serif;
+    --ff-items-trial: "Items Trial", serif;
+    --ff-inter: "Inter", sans-serif;
+    /* ~-~-~-~-~ declare font family & weight ~-~-~-~-~ */
+
+    /* ~-~-~-~-~ declare font size ~-~-~-~-~ */
+    --f-size-XXXL: 68px;
+    --f-size-XXl: 30px;
+    --f-size-XL: 25px;
+    --f-size-L: 20px;
+    --f-size-M: 18px;
+    --f-size-S: 16px;
+    --f-size-XS: 14px;
+    /* ~-~-~-~-~ declare font size ~-~-~-~-~ */
+
+    /* ~-~-~-~-~ common transition ~-~-~-~-~ */
+    --transition-common: all 0.5s ease 0s;
+    /* ~-~-~-~-~ common transition ~-~-~-~-~ */
+
+    /* ~-~-~-~-~ border radious adjustments ~-~-~-~-~ */
+    --radius-5: 5px;
+    --radius-10: 10px;
+    --radius-20: 20px;
+    --radius-25: 25px;
+    --radius-30: 30px;
+    --radius-35: 35px;
+    --radius-40: 40px;
+    --radius-45: 45px;
+    --radius-50: 50px;
+    /* ~-~-~-~-~ border radious adjustments ~-~-~-~-~ */
+
+    /* ~-~-~-~-~ other adjustments ~-~-~-~-~ */
+    --gap-24: 24px;
+    --gap-30: 30px;
+    --gap-40: 40px;
+    --gap-50: 50px;
+    --gap-60: 60px;
+    /* ~-~-~-~-~ other adjustments ~-~-~-~-~ */
+
+    --margin-title: 0 0 15px 0;
+    --margin-paragraph: 0 0 15px 0;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* =========== Responsive Start =========== */
+@media only screen and (max-width: 1199px) {
+    :root {
+        --f-size-XXXL: 34px;
+    }
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@media only screen and (max-width: 767px) {
+    :root {
+        --f-size-XXXL: 30px;
+        --f-size-XXl: 28px;
+        --f-size-XL: 23px;
+        --f-size-M: 16px;
+        --form-height: 45px;
+    }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+/* ~-~-~-~-~-~-~-~-~-~ global settings ~-~-~-~-~-~-~-~-~-~ */
+
+body {
+    font-family: var(--ff-montserrat);
+    font-weight: 400;
+    font-size: var(--f-size-XS);
+    color: var(--color-secondary);
+    overflow-x: hidden;
+    position: relative;
+    min-height: 100vh;
 }
 
-.card {
-  padding: 2em;
+p:last-child {
+    margin-bottom: 0;
 }
 
-.read-the-docs {
-  color: #888;
+p:not(:last-child) {
+    margin: var(--margin-paragraph);
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+    font-family: var(--ff-items-trial);
+    font-weight: 700;
+    line-height: 1.25;
+    margin: var(--margin-title);
+}
+
+h1,
+.h1 {
+    font-size: var(--f-size-XXXL);
+}
+
+h2,
+.h2 {
+    font-size: var(--f-size-XXl);
+}
+
+h3,
+.h3 {
+    font-size: var(--f-size-XL);
+}
+
+h4,
+.h4 {
+    font-size: var(--f-size-L);
+}
+
+h5,
+.h5 {
+    font-size: var(--f-size-M);
+}
+
+h6,
+.h6 {
+    font-size: var(--f-size-S);
+}
+
+/* ~-~-~-~-~-~-~-~-~-~ margin adjustments ~-~-~-~-~-~-~-~-~-~ */
+.mb-6 {
+    margin-bottom: 6rem;
+}
+
+.mb-7 {
+    margin-bottom: 7rem;
+}
+
+.mb-8 {
+    margin-bottom: 8rem;
+}
+
+.mb-9 {
+    margin-bottom: 9rem;
+}
+
+/* ~-~-~-~-~-~-~-~-~-~ margin adjustments ~-~-~-~-~-~-~-~-~-~ */
+
+/* ~-~-~-~-~-~-~-~-~-~ padding adjustments ~-~-~-~-~-~-~-~-~-~ */
+.padding-block--10 {
+    padding-block: 10px;
+}
+
+.padding-inline--10 {
+    padding-inline: 10px;
+}
+
+.padding-block--15 {
+    padding-block: 15px;
+}
+
+.padding-inline--15 {
+    padding-inline: 15px;
+}
+
+.padding-block--20 {
+    padding-block: 20px;
+}
+
+.padding-inline--20 {
+    padding-inline: 20px;
+}
+
+.padding-block--25 {
+    padding-block: 25px;
+}
+
+.padding-inline--25 {
+    padding-inline: 25px;
+}
+
+.padding-block--30 {
+    padding-block: 30px;
+}
+
+.padding-inline--30 {
+    padding-inline: 30px;
+}
+
+.padding-block--35 {
+    padding-block: 35px;
+}
+
+.padding-inline--35 {
+    padding-inline: 35px;
+}
+
+.padding-block--40 {
+    padding-block: 40px;
+}
+
+.padding-inline--40 {
+    padding-inline: 40px;
+}
+
+.padding-block--50 {
+    padding-block: 50px;
+}
+
+.padding-inline--50 {
+    padding-inline: 50px;
+}
+
+.padding-block--60 {
+    padding-block: 60px;
+}
+
+.padding-inline--60 {
+    padding-inline: 60px;
+}
+
+.padding-block--70 {
+    padding-block: 70px;
+}
+
+.padding-inline--70 {
+    padding-inline: 70px;
+}
+
+.padding-block--80 {
+    padding-block: 80px;
+}
+
+.padding-inline--80 {
+    padding-inline: 80px;
+}
+
+.padding-block--90 {
+    padding-block: 90px;
+}
+
+.padding-inline--90 {
+    padding-inline: 90px;
+}
+
+.padding-block--100 {
+    padding-block: 100px;
+}
+
+.padding-inline--100 {
+    padding-inline: 100px;
+}
+
+.padding-common-block {
+    padding-top: var(--padding-height);
+    padding-bottom: var(--padding-height);
+}
+
+/* ~-~-~-~-~-~-~-~-~-~ padding adjustments ~-~-~-~-~-~-~-~-~-~ */
+
+/* ~-~-~-~-~-~-~-~-~-~ border width adjustments ~-~-~-~-~-~-~-~-~-~ */
+.border-width--1 {
+    border-style: solid;
+    border-width: 1px;
+}
+
+.border-width--2 {
+    border-style: solid;
+    border-width: 2px;
+}
+
+.border-width--3 {
+    border-style: solid;
+    border-width: 3px;
+}
+
+.border-width--4 {
+    border-style: solid;
+    border-width: 4px;
+}
+
+.border-width--5 {
+    border-style: solid;
+    border-width: 5px;
+}
+
+/* ~-~-~-~-~-~-~-~-~-~ border width adjustments ~-~-~-~-~-~-~-~-~-~ */
+
+/* ~-~-~-~-~-~-~-~-~-~ radious adjustmnets ~-~-~-~-~-~-~-~-~-~ */
+.radious-5 {
+    border-radius: var(--radius-5);
+}
+
+.radious-10 {
+    border-radius: var(--radius-10);
+}
+
+.radious-15 {
+    border-radius: var(--radius-15);
+}
+
+.radious-20 {
+    border-radius: var(--radius-20);
+}
+
+.radious-25 {
+    border-radius: var(--radius-25);
+}
+
+.radious-30 {
+    border-radius: var(--radius-30);
+}
+
+.radious-35 {
+    border-radius: var(--radius-35);
+}
+
+.radious-40 {
+    border-radius: var(--radius-40);
+}
+
+.radious-45 {
+    border-radius: var(--radius-45);
+}
+
+.radious-50 {
+    border-radius: var(--radius-50);
+}
+
+/* ~-~-~-~-~-~-~-~-~-~ radious adjustmnets ~-~-~-~-~-~-~-~-~-~ */
+
+/* ~-~-~-~-~-~-~-~-~-~ font color adjustmnets ~-~-~-~-~-~-~-~-~-~ */
+.color-primary {
+    color: var(--color-primary);
+}
+
+.color-accent {
+    color: var(--color-accent);
+}
+
+/* ~-~-~-~-~-~-~-~-~-~ font color adjustmnets ~-~-~-~-~-~-~-~-~-~ */
+
+/* ~-~-~-~-~-~-~-~-~-~ font weight adjustmnets ~-~-~-~-~-~-~-~-~-~ */
+.font-weight--400 {
+    font-weight: 400;
+}
+
+.font-weight--500 {
+    font-weight: 500;
+}
+
+.font-weight--700 {
+    font-weight: 700;
+}
+
+/* ~-~-~-~-~-~-~-~-~-~ font weight adjustmnets ~-~-~-~-~-~-~-~-~-~ */
+
+/* ~-~-~-~-~-~-~-~-~-~ border color adjustmnets ~-~-~-~-~-~-~-~-~-~ */
+.border-softGrey {
+    border-color: #d1d5db;
+}
+
+.border-paleGrey {
+    border-color: #e3e8ef;
+}
+
+/* ~-~-~-~-~-~-~-~-~-~ border color adjustmnets ~-~-~-~-~-~-~-~-~-~ */
+
+/* ~-~-~-~-~-~-~-~-~-~ bg color adjustmnets ~-~-~-~-~-~-~-~-~-~ */
+.bg-white {
+    background: var(--color-white);
+}
+
+/* ~-~-~-~-~-~-~-~-~-~ bg color adjustmnets ~-~-~-~-~-~-~-~-~-~ */
+
+/* ~-~-~-~-~-~-~-~-~-~ box shadow adjustments ~-~-~-~-~-~-~-~-~-~ */
+.bShadow-pattern--1 {
+    box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.06);
+}
+
+.bShadow-pattern--2 {
+    box-shadow: 0 4px 50px 0 rgba(0, 0, 0, 0.02);
+}
+
+/* ~-~-~-~-~-~-~-~-~-~ box shadow adjustments ~-~-~-~-~-~-~-~-~-~ */
+
+/* ~-~-~-~-~-~-~-~-~-~ equal height adjustments ~-~-~-~-~-~-~-~-~-~ */
+.equal-height [class*="col"]>div {
+    height: 100%;
+}
+
+/* ~-~-~-~-~-~-~-~-~-~ equal height adjustments ~-~-~-~-~-~-~-~-~-~ */
+
+/* ~-~-~-~-~-~-~-~-~-~ full width adjustments ~-~-~-~-~-~-~-~-~-~ */
+.full-width {
+    width: 100%;
+}
+
+/* ~-~-~-~-~-~-~-~-~-~ full width adjustments ~-~-~-~-~-~-~-~-~-~ */
+
+.report-library-container {
+    padding: 2rem 4rem;
+}
+
+/* --------- header logo adjustments --------- */
+.header-logo {
+    a {
+        display: block;
+        height: 22px;
+
+        img {
+            width: auto;
+            height: 100%;
+            display: block;
+        }
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .header-logo {
+        a {
+            height: 14px;
+        }
+    }
+}
+
+/* --------- header logo adjustments --------- */
+
+@media only screen and (min-width: 1400px) {
+    .container {
+        max-width: 1355px;
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .container {
+        max-width: 100%;
+        padding-inline: 15px;
+    }
 }

@@ -1,0 +1,84 @@
+/* Table Container */
+.custom-table-container {
+    width: 100%;
+    overflow-x: auto;
+    background-color: transparent;
+}
+
+.custom-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--ff-montserrat);
+}
+
+/* Header Styles */
+.custom-table thead th {
+    text-align: left;
+    font-size: 0.85rem;
+    font-weight: 400;
+    /* Lighter weight as per image look */
+    color: #999;
+    /* Light gray text */
+    padding: 1rem;
+    border-bottom: 1px solid transparent;
+    /* No visible border in snippet */
+    font-family: var(--ff-montserrat);
+    letter-spacing: 0.5px;
+}
+
+.custom-table thead th.table-header-center {
+    text-align: center;
+}
+
+.custom-table thead th.table-header-right {
+    text-align: right;
+}
+
+/* Body Styles */
+.custom-table tbody td {
+    padding: 1rem;
+    font-size: 0.9rem;
+    color: #333;
+    border-bottom: 1px solid #eee;
+    vertical-align: top;
+}
+
+@media (max-width: 480px) {
+
+    .custom-table thead th,
+    .custom-table tbody td {
+        padding: 0.75rem 0.5rem;
+        font-size: 0.8rem;
+    }
+}
+
+.custom-table tbody tr:hover {
+    background-color: #f9f9f9;
+}
+
+.custom-table tbody tr.clickable-row {
+    cursor: pointer;
+}
+
+.custom-table tbody tr.clickable-row:hover {
+    background-color: #E8EEF1;
+    /* Light Blue Highlight */
+}
+
+.table-cell-center {
+    text-align: center;
+}
+
+.table-cell-right {
+    text-align: right;
+}
+
+/* Specific Cell Styles helpers */
+.action-cell {
+    color: #0D3E54;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+}

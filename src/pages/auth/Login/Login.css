@@ -1,0 +1,286 @@
+/* Login Page Styles */
+.login-page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+    background-color: #fff;
+}
+
+.login-body-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    flex: 1;
+    width: 100%;
+    min-height: 0;
+    /* Important for grid nesting */
+}
+
+.login-image-section {
+    position: relative;
+    background-image: url('/images/login-hero.jpg');
+    /* Business/Office placeholder */
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+}
+
+/* .login-image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        linear-gradient(rgba(0, 95, 133, 0.3), rgba(0, 95, 133, 0.3)) padding-box,
+        linear-gradient(to bottom, rgba(0, 91, 131, 0.3), rgba(101, 176, 202, 0.1)) border-box;
+    border: 2px solid transparent;
+    backdrop-filter: blur(17.79px);
+    -webkit-backdrop-filter: blur(17.79px);
+} */
+
+/* Form Section */
+.login-form-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 2rem;
+    background-color: #fff;
+}
+
+.login-content-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-form-container {
+    width: 100%;
+    max-width: 452px;
+    background: #fff;
+    /* Ensure it's white */
+    /* padding could be removed if container is just structure */
+}
+
+.brand-subtitle {
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-size: 17px;
+    color: var(--color-accent);
+    margin-bottom: 2.5rem;
+    text-align: center;
+    font-weight: 600;
+    font-family: var(--ff-montserrat);
+}
+
+.login-title {
+    /* Updated Font */
+    font-size: 44px;
+    color: var(--color-primary);
+    /* Enterprise Dark Blue */
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-weight: normal;
+    /* Often custom fonts have their own weight */
+}
+
+.form-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.forgot-password-link {
+    text-align: right;
+    margin-top: 0.5rem;
+}
+
+.forgot-password-link a {
+    color: #959595;
+    text-decoration: none;
+    font-size: 0.775rem;
+}
+
+.forgot-password-link a:hover {
+    text-decoration: underline;
+}
+
+.submit-btn-wrapper {
+    margin-top: 1rem;
+}
+
+.enroll-text {
+    margin-top: 1.5rem;
+    text-align: center;
+    color: #666;
+    font-size: 0.95rem;
+}
+
+.enroll-link {
+    color: #003366;
+    font-weight: 600;
+    text-decoration: none;
+    margin-left: 0.5rem;
+    border-bottom: 1px solid currentColor;
+}
+
+.enroll-link:hover {
+    opacity: 0.8;
+}
+
+.login-submit-btn {
+    background-color: #003366 !important;
+    /* Enterprise Blue */
+    color: white !important;
+    padding: 12px 0 !important;
+    border-radius: 0 !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.login-submit-btn:hover {
+    background-color: #002244 !important;
+    /* Darker blue */
+}
+
+
+.custom-input {
+    border-radius: 0 !important;
+}
+
+.custom-form .MuiInputBase-input {
+    height: auto;
+    padding: 14px 18px;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: inherit;
+    opacity: 1;
+    color: var(--color-primary);
+}
+
+.custom-form .MuiInputBase-input::placeholder {
+    color: var(--color-primary);
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    opacity: 1;
+}
+
+.custom-form fieldset {
+    border-radius: 0;
+    border-color: var(--color-primary);
+}
+
+/* Responsive */
+/* Responsive Design */
+
+/* Small Desktop / Laptop (1024px - 1200px) */
+@media (max-width: 1200px) {
+    .login-title {
+        font-size: 36px;
+    }
+
+    .brand-subtitle {
+        font-size: 15px;
+    }
+}
+
+/* Tablet (991px to 768px) */
+@media (max-width: 991px) {
+    .login-body-grid {
+        grid-template-columns: 1fr;
+        /* Stack vertically */
+    }
+
+    .login-image-section {
+        display: block;
+        height: 300px;
+        min-height: 300px;
+    }
+
+    .login-form-section {
+        padding: 4rem 2rem;
+        justify-content: flex-start;
+        /* Move form to top of its section */
+    }
+
+    .login-title {
+        font-size: 32px;
+        margin-bottom: 2rem;
+    }
+
+    .login-form-container {
+        max-width: 500px;
+        /* Allow wider form on tablet stack */
+    }
+}
+
+/* Mobile (767px to 360px) */
+@media (max-width: 767px) {
+    .login-page-container {
+        /* Prevent horizontal scroll */
+        max-width: 100vw;
+        overflow-x: hidden;
+    }
+
+    .login-image-section {
+        height: 200px;
+        /* Smaller image banner */
+        min-height: 200px;
+    }
+
+    .login-form-section {
+        padding: 2rem 1.5rem;
+    }
+
+    .login-title {
+        font-size: 28px;
+        margin-bottom: 1.5rem;
+    }
+
+    .brand-subtitle {
+        font-size: 14px;
+        letter-spacing: 1.5px;
+        margin-bottom: 2rem;
+    }
+
+    .login-form-container {
+        max-width: 100%;
+    }
+
+    .custom-form .MuiInputBase-input {
+        padding: 12px 14px;
+        font-size: 14px;
+    }
+
+    .custom-form .MuiInputBase-input::placeholder {
+        font-size: 14px;
+    }
+
+    .login-submit-btn {
+        padding: 14px 0 !important;
+        /* Larger touch target */
+    }
+}
+
+/* Small Mobile (360px to 400px optimized) */
+@media (max-width: 400px) {
+    .login-image-section {
+        display: none;
+        /* Hide image on very small screens to save space */
+    }
+
+    .login-form-section {
+        padding: 3rem 1.25rem;
+    }
+
+    .login-title {
+        font-size: 24px;
+    }
+}

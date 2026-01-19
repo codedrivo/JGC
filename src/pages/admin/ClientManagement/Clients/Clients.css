@@ -1,0 +1,224 @@
+/* Clients Page Styles - Reusing Banner Pattern */
+.clients-container {
+    background-color: #fff;
+    min-height: 100%;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.top-grey-banner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 160px;
+    background-color: #E7ECEE;
+    z-index: 0;
+}
+
+.client-content-wrapper {
+    position: relative;
+    z-index: 1;
+    max-width: 1400px;
+    /* Wider for table */
+    margin: 0 auto;
+    padding: 60px 4rem 4rem 4rem;
+}
+
+.title-section {
+    background-color: #fff;
+    width: fit-content;
+    padding: 1rem 2rem 0 0;
+    margin-bottom: 2rem;
+}
+
+.page-title {
+    font-family: var(--ff-items-trial);
+    font-size: 4rem;
+    font-weight: 400;
+    color: #000;
+    margin: 0;
+    line-height: 1.1;
+}
+
+/* Actions Row */
+.actions-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    /* Align bottom with title/filters */
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.filters-group {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    font-family: var(--ff-montserrat);
+    font-size: 0.75rem;
+    color: #666;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.filter-label {
+    color: #999;
+}
+
+.filter-trigger {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #666;
+    font-weight: 600;
+}
+
+.buttons-group {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn-export {
+    background: transparent;
+    border: 1px solid #ccc;
+    padding: 10px 20px;
+    font-family: var(--ff-montserrat);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #666;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-add-client {
+    background-color: #0F3D54;
+    /* Dark Blue */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-family: var(--ff-montserrat);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.2s;
+    text-decoration: none;
+    /* Link link */
+    display: inline-flex;
+    align-items: center;
+}
+
+.btn-add-client:hover {
+    background-color: #092C3E;
+}
+
+/* Filter Pills */
+.active-filters-row {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.filter-pill {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid #000;
+    border-radius: 50px;
+    padding: 6px 16px;
+    font-family: var(--ff-montserrat);
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #333;
+    background: #fff;
+}
+
+.filter-pill-label {
+    color: #999;
+    font-weight: 400;
+}
+
+.pill-close {
+    cursor: pointer;
+    margin-left: 5px;
+    font-size: 0.9rem;
+    line-height: 1;
+}
+
+/* Table Styles */
+.clients-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.clients-table th {
+    text-align: left;
+    padding: 10px 0;
+    border-bottom: 2px solid #ddd;
+    /* Thicker header border? Image looks clean */
+    font-family: var(--ff-montserrat);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #000;
+    padding-bottom: 1.5rem;
+}
+
+.clients-table td {
+    padding: 1.5rem 0;
+    border-bottom: 1px solid #eee;
+    font-family: var(--ff-montserrat);
+    font-size: 0.85rem;
+    color: #666;
+    vertical-align: top;
+}
+
+.client-row:last-child td {
+    border-bottom: none;
+}
+
+.edit-link {
+    color: #333;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.85rem;
+    cursor: pointer;
+}
+
+.edit-link:hover {
+    text-decoration: underline;
+}
+
+.subscription-cell {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .client-content-wrapper {
+        padding: 40px 2rem 2rem 2rem;
+    }
+
+    .page-title {
+        font-size: 3rem;
+    }
+
+    .clients-table {
+        display: block;
+        overflow-x: auto;
+    }
+}
