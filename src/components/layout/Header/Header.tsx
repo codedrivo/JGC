@@ -154,9 +154,9 @@ const Header: React.FC<HeaderProps> = ({ onSidebarToggle }) => {
                     }
                   }}
                 >
-                  <MenuItem onClick={handleMenuClose} style={{ fontSize: '0.85rem' }}>Profile</MenuItem>
-                  <MenuItem onClick={handleMenuClose} style={{ fontSize: '0.85rem' }}>My Account</MenuItem>
-                  <MenuItem onClick={handleMenuClose} style={{ fontSize: '0.85rem' }}>Logout</MenuItem>
+                  { /*<MenuItem onClick={handleMenuClose} style={{ fontSize: '0.85rem' }}>Profile</MenuItem> */}
+                  <MenuItem component={Link} to="/my-account" onClick={handleMenuClose} style={{ fontSize: '0.85rem' }}>My Account</MenuItem>
+                  <MenuItem component={Link} to="/login"onClick={handleMenuClose} style={{ fontSize: '0.85rem' }}>Logout</MenuItem>
                 </Menu>
               </>
             ) : (

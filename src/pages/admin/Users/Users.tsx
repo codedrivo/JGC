@@ -4,6 +4,7 @@ import { Menu, MenuItem, Checkbox, ListItemText } from "@mui/material";
 import Button from "../../../components/common/Button/Button";
 import PageHeader from "../../../components/common/PageHeader/PageHeader";
 import "./Users.css";
+import { useNavigate } from "react-router-dom";
 
 // Mock Data for Users
 const usersData = [
@@ -14,6 +15,7 @@ const usersData = [
 ];
 
 const Users = () => {
+  const navigate = useNavigate();
   // Filter states
   const [activeStatus, setActiveStatus] = useState("All");
   const [activeSubscriptions, setActiveSubscriptions] = useState<string[]>(["Beyond the Headlines", "Softs Weekly"]);
@@ -102,7 +104,7 @@ const Users = () => {
               <Button variant="outlined" style={{ borderRadius: 0, padding: '10px 30px', borderColor: '#999', color: '#999', backgroundColor: 'white' }}>
                 EXPORT LIST
               </Button>
-              <Button variant="contained" style={{ borderRadius: 0, padding: '10px 30px', backgroundColor: '#0D3E54' }}>
+              <Button variant="contained" style={{ borderRadius: 0, padding: '10px 30px', backgroundColor: '#0D3E54' }} onClick={() => navigate("/admin/client-management/add-new")}>
                 + ADD CLIENT
               </Button>
             </div>

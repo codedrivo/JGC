@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import AdminLayout from '../layouts/AdminLayout';
 import ClientLayout from '../layouts/ClientLayout';
 import AuthLayout from '../layouts/AuthLayout';
@@ -6,9 +6,10 @@ import AuthLayout from '../layouts/AuthLayout';
 // Auth Pages
 import Login from '../pages/auth/Login/Login';
 import ForgotPassword from '../pages/auth/ForgotPassword/ForgotPassword';
+import ResetPassword from '../pages/auth/ResetPassword/ResetPassword';
 
 // Public Pages
-import Home from '../pages/public/Home/Home';
+// import Home from '../pages/public/Home/Home';
 import About from '../pages/public/About/About';
 import Services from '../pages/public/Services/Services';
 import Contact from '../pages/public/Contact/Contact';
@@ -39,7 +40,7 @@ const AppRoutes = () => {
       <Route path="/global-setup" element={<GlobalSetup />} />
 
       {/* Public Routes */}
-      <Route path="/" element={<Home />} />
+      <Route path="/" element={<Navigate to="/login" replace />} />
       <Route path="/about" element={<About />} />
       <Route path="/services" element={<Services />} />
       <Route path="/contact" element={<Contact />} />
@@ -50,6 +51,9 @@ const AppRoutes = () => {
       </Route>
       <Route path="/forgot-password" element={<AuthLayout />}>
         <Route index element={<ForgotPassword />} />
+      </Route>
+      <Route path="/reset-password" element={<AuthLayout />}>
+        <Route index element={<ResetPassword />} />
       </Route>
 
       {/* Admin Routes */}

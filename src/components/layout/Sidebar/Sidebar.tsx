@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import {
   BsFileText,
   BsPerson,
-  BsCreditCard,
+ // BsCreditCard,
   BsGraphUp,
   BsX,
   BsChatDots,
@@ -83,10 +83,10 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
               <span className="sidebar-text">ANALYTICS</span>
             </Link>
 
-            <Link to="/admin/billing" className={`sidebar-item ${isActive('/billing') ? 'active' : ''}`}>
+            { /*<Link to="/admin/billing" className={`sidebar-item ${isActive('/billing') ? 'active' : ''}`}>
               <BsCreditCard className="sidebar-icon" />
               <span className="sidebar-text">BILLING</span>
-            </Link>
+            </Link> */ }
           </>
         ) : (
           /* ================= CLIENT MENU ================= */
@@ -106,10 +106,10 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
               <span className="sidebar-text">MY ACCOUNT</span>
             </Link>
 
-            <Link to="/billing" className={`sidebar-item ${isActive('/billing') ? 'active' : ''}`}>
+            { /*<Link to="/billing" className={`sidebar-item ${isActive('/billing') ? 'active' : ''}`}>
               <BsCreditCard className="sidebar-icon" />
               <span className="sidebar-text">BILLING</span>
-            </Link>
+            </Link> */ }
 
             <Link to="/faq" className={`sidebar-item ${isActive('/faq') ? 'active' : ''}`}>
               <BsQuestionCircle className="sidebar-icon" />
