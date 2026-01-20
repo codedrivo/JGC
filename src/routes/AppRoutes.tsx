@@ -12,6 +12,8 @@ import Home from '../pages/public/Home/Home';
 import About from '../pages/public/About/About';
 import Services from '../pages/public/Services/Services';
 import Contact from '../pages/public/Contact/Contact';
+import PrivacyPolicy from '../pages/public/PrivacyPolicy/PrivacyPolicy';
+import TermsOfUse from '../pages/public/TermsOfUse/TermsOfUse';
 
 // Test Page
 import TestPage from '../pages/TestPage';
@@ -71,6 +73,8 @@ const AppRoutes = () => {
         <Route path="/my-account" element={<MyAccount />} />
         <Route path="/billing" element={<ClientBilling />} />
         <Route path="/faq" element={<FAQ />} />
+        <Route path="/privacy" element={<PrivacyPolicy />} />
+        <Route path="/terms" element={<TermsOfUse />} />
       </Route>
 
       <Route path="/client" element={<ClientLayout />}>
