@@ -118,15 +118,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
               <span className="sidebar-text">FAQ</span>
             </Link>
 
-            <Link to="/privacy" className={`sidebar-item ${isActive('/privacy') ? 'active' : ''}`}>
-              <BsShield className="sidebar-icon" />
-              <span className="sidebar-text">PRIVACY POLICY</span>
-            </Link>
-
-            <Link to="/terms" className={`sidebar-item ${isActive('/terms') ? 'active' : ''}`}>
-              <BsFileLock className="sidebar-icon" />
-              <span className="sidebar-text">TERMS OF USE</span>
-            </Link>
+            
           </>
         )}
 
