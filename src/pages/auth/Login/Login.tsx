@@ -5,8 +5,10 @@ import InputField from "../../../components/common/forms/Input/Input";
 import Button from "../../../components/common/Button/Button";
 import "./Login.css";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Login: React.FC = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -69,7 +71,7 @@ const Login: React.FC = () => {
                       className="custom-input"
                     />
                     <div className="forgot-password-link">
-                      <Link to="#forgot-password">Forgot Password?</Link>
+                      <Link to="/forgot-password">Forgot Password?</Link>
                     </div>
                   </div>
                 </div>
@@ -81,6 +83,7 @@ const Login: React.FC = () => {
                     variant="contained"
                     size="large"
                     className="login-submit-btn"
+                    onClick={() => navigate("/admin/reports")}
                   >
                     SIGN IN
                   </Button>

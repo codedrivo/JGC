@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import { BsDownload, BsBoxArrowUpRight, BsChatDots } from "react-icons/bs";
 import { LuChevronLeft, LuChevronRight, LuArrowRight } from "react-icons/lu";
