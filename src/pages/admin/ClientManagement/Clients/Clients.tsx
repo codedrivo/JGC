@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import { BsChevronDown, BsX } from "react-icons/bs";
 import "./Clients.css";

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { BsCheck, BsCalendar3 } from "react-icons/bs";
 import PageHeader from "../../../../components/common/PageHeader/PageHeader";
 import "./AddNewClient.css";
