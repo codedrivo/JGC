@@ -25,7 +25,9 @@ const Header: React.FC<HeaderProps> = ({ onSidebarToggle }) => {
     window.location.pathname.includes('/report-library') ||
     window.location.pathname.includes('/ask-judy-ai') ||
     window.location.pathname.includes('/billing') ||
-    window.location.pathname.includes('/faq');
+    window.location.pathname.includes('/faq') ||
+    window.location.pathname.includes('/privacy') ||
+    window.location.pathname.includes('/terms');
   const size = 20;
 
   const handleSearchToggle = () => {
@@ -94,6 +96,8 @@ const Header: React.FC<HeaderProps> = ({ onSidebarToggle }) => {
               <li><Link to="#reports" onClick={() => setIsMobileNavOpen(false)}>REPORTS</Link></li>
               <li><Link to="#courses" onClick={() => setIsMobileNavOpen(false)}>COURSES</Link></li>
               <li><Link to="#contact" onClick={() => setIsMobileNavOpen(false)}>CONTACT</Link></li>
+              <li><Link to="/privacy" onClick={() => setIsMobileNavOpen(false)}>PRIVACY</Link></li>
+              <li><Link to="/terms" onClick={() => setIsMobileNavOpen(false)}>TERMS</Link></li>
             </ul>
           </nav>
 

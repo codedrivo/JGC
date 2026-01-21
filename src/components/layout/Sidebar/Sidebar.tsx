@@ -7,7 +7,9 @@ import {
   BsGraphUp,
   BsX,
   BsChatDots,
-  BsQuestionCircle
+  BsQuestionCircle,
+  BsShield,
+  BsFileLock
 } from "react-icons/bs";
 import "./Sidebar.css";
 
@@ -115,6 +117,8 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
               <BsQuestionCircle className="sidebar-icon" />
               <span className="sidebar-text">FAQ</span>
             </Link>
+
+            
           </>
         )}
 
