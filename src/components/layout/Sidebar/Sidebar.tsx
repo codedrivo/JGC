@@ -8,8 +8,8 @@ import {
   BsX,
   BsChatDots,
   BsQuestionCircle,
-  BsShield,
-  BsFileLock
+  // BsShield,
+  // BsFileLock
 } from "react-icons/bs";
 import "./Sidebar.css";
 

@@ -1,4 +1,3 @@
-import React from 'react';
 import PageHeader from '../../../components/common/PageHeader/PageHeader';
 import './PrivacyPolicy.css';
 

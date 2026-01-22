@@ -40,9 +40,9 @@ const AddNewClient = () => {
                     </div>
                     <div className="form-grid-2">
                         <select className="form-select">
-                            <option>LICENSING INFORMATION</option>
-                            <option>Standard License</option>
-                            <option>Premium License</option>
+                            <option>SINGLE USER</option>
+                            <option>UP TO 3 USERS</option>
+                            <option>ENTERPRISE</option>
                         </select>
                         <input type="text" className="form-input" placeholder="STATUS: CURRENT CLIENT" />
                     </div>

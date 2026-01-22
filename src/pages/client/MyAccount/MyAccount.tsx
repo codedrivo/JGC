@@ -34,7 +34,7 @@ const MyAccount = () => {
           <div className="form-grid-2">
             <InputField label="COMPANY NAME" value="COMPANY NAME" />
             <InputField label="#999999999" value="#999999999" />
-            <InputField label="LICENSING INFORMATION" value="LICENSING INFORMATION" />
+            <InputField label="SINGLE USER" value="SINGLE USER" />
             <InputField label="STATUS" value="CURRENT CLIENT" />
           </div>
         </div>

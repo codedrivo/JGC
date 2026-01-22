@@ -96,8 +96,6 @@ const Header: React.FC<HeaderProps> = ({ onSidebarToggle }) => {
               <li><Link to="#reports" onClick={() => setIsMobileNavOpen(false)}>REPORTS</Link></li>
               <li><Link to="#courses" onClick={() => setIsMobileNavOpen(false)}>COURSES</Link></li>
               <li><Link to="#contact" onClick={() => setIsMobileNavOpen(false)}>CONTACT</Link></li>
-              <li><Link to="/privacy" onClick={() => setIsMobileNavOpen(false)}>PRIVACY</Link></li>
-              <li><Link to="/terms" onClick={() => setIsMobileNavOpen(false)}>TERMS</Link></li>
             </ul>
           </nav>
 
