@@ -25,6 +25,7 @@
     color: #0d3b4c;
     cursor: pointer;
     padding: 6px 8px;
+    text-decoration: underline;
 }
 
 .filter-reset:hover {
