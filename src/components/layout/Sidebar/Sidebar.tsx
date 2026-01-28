@@ -1,5 +1,9 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
+import menuicon1 from "../../../assets/sm1.svg";
+import menuicon2 from "../../../assets/sm2.svg";
+import menuicon3 from "../../../assets/sm3.svg";
+import menuicon4 from "../../../assets/sm4.svg";
 import {
   BsFileText,
   BsPerson,
@@ -50,7 +54,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
         {isAdmin ? (
           <>
             <Link to="/admin/reports" className={`sidebar-item ${isActive('/reports') ? 'active' : ''}`}>
-              <BsFileText className="sidebar-icon" />
+              <img src={menuicon1} alt="Reports Icon" className="sidebar-icon-img" />
               <span className="sidebar-text">REPORT LIBRARY</span>
             </Link>
 
@@ -94,17 +98,17 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
           /* ================= CLIENT MENU ================= */
           <>
             <Link to="/report-library" className={`sidebar-item ${isActive('/report-library') ? 'active' : ''}`}>
-              <BsFileText className="sidebar-icon" />
+              <img src={menuicon1} alt="Reports Icon" className="sidebar-icon-img" />
               <span className="sidebar-text">REPORT LIBRARY</span>
             </Link>
 
             <Link to="/ask-judy-ai" className={`sidebar-item ${isActive('/ask-judy-ai') ? 'active' : ''}`}>
-              <BsChatDots className="sidebar-icon" />
+              <img src={menuicon2} alt="Ask Judy AI Icon" className="sidebar-icon-img" />
               <span className="sidebar-text">ASK JUDY AI</span>
             </Link>
 
             <Link to="/my-account" className={`sidebar-item ${isActive('/my-account') ? 'active' : ''}`}>
-              <BsPerson className="sidebar-icon" />
+              <img src={menuicon3} alt="My Account Icon" className="sidebar-icon-img" />
               <span className="sidebar-text">MY ACCOUNT</span>
             </Link>
 
@@ -114,7 +118,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
             </Link> */ }
 
             <Link to="/faq" className={`sidebar-item ${isActive('/faq') ? 'active' : ''}`}>
-              <BsQuestionCircle className="sidebar-icon" />
+              <img src={menuicon4} alt="FAQ Icon" className="sidebar-icon-img" />
               <span className="sidebar-text">FAQ</span>
             </Link>
 

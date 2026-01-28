@@ -3,6 +3,7 @@
 import React from "react";
 import { FormControl, MenuItem, Select } from "@mui/material";
 import "./FilterBar.css";
+import downArrow from "../../../assets/down-arrow.png";
 
 interface Option {
     label: string;
@@ -36,6 +37,14 @@ const FilterBar: React.FC<FilterBarProps> = ({
                     value={filterValue}
                     onChange={(e) => onFilterChange(e.target.value)}
                     displayEmpty
+                    IconComponent={(props) => (
+                        <img
+                            src={downArrow}
+                            alt="down"
+                            {...props}
+                            style={{ width: 16, height: 10, ...(props.style || {}) }}
+                        />
+                    )}
                 >
                     <MenuItem value="">
                         <span className="filter-placeholder">FILTER BY: TYPE</span>
@@ -55,6 +64,14 @@ const FilterBar: React.FC<FilterBarProps> = ({
                     value={sortValue}
                     onChange={(e) => onSortChange(e.target.value)}
                     displayEmpty
+                    IconComponent={(props) => (
+                        <img
+                            src={downArrow}
+                            alt="down"
+                            {...props}
+                            style={{ width: 16, height: 10, ...(props.style || {}) }}
+                        />
+                    )}
                 >
                     <MenuItem value="">
                         <span className="filter-placeholder">

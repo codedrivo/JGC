@@ -25,12 +25,16 @@
     color: #0d3b4c;
     cursor: pointer;
     padding: 6px 8px;
+    text-decoration: underline;
 }
 
 .filter-reset:hover {
     text-decoration: underline;
 }
-
+.MuiSelect-icon {
+    top: calc(50% - 0.3em) !important;
+    color: #000;
+}   
 /* Responsive */
 @media (max-width: 768px) {
     .filter-bar {
