@@ -32,10 +32,10 @@ const MyAccount = () => {
         {/* Company Info Form */}
         <div className="account-section">
           <div className="form-grid-2">
-            <InputField label="COMPANY NAME" value="COMPANY NAME" />
-            <InputField label="#999999999" value="#999999999" />
-            <InputField label="SINGLE USER" value="SINGLE USER" />
-            <InputField label="STATUS" value="CURRENT CLIENT" />
+            <InputField value="COMPANY NAME" />
+            <InputField value="#999999999" />
+            <InputField value="SINGLE USER" />
+            <InputField  value="CURRENT CLIENT" />
           </div>
         </div>
 

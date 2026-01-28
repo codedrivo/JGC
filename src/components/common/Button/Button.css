@@ -7,8 +7,8 @@
     transition: color 0.2s;
     border-radius: 0;
     padding: 8px 24px;
-    color: var(--color-white);
-    background-color: var(--color-primary);
+    color: var(--color-white) !important;
+    background-color: var(--color-primary) !important;
 }
 
 .MuiButtonBase-root.custom-btn:hover {

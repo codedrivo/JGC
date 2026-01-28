@@ -23,7 +23,7 @@
     justify-content: space-between;
     align-items: center;
     padding-bottom: 1.5rem;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #959595;
 }
 
 .report-info {
@@ -32,7 +32,7 @@
 
 .report-title {
     font-family: var(--ff-items-trial);
-    font-size: 1.4rem;
+    font-size: 1.7rem;
     margin-bottom: 0.25rem;
     color: #111;
     font-weight: 400;
@@ -48,11 +48,14 @@
 .report-description {
     font-family: var(--ff-montserrat);
     font-size: 0.75rem;
-    color: #555;
-    max-width: 650px;
+    color: #000;
+    padding-right: 20px;
     line-height: 1.4;
+    font-weight: 500;
 }
-
+.report-actions svg {
+    font-size: 18px;
+}
 .report-actions {
     display: flex;
     gap: 2rem;

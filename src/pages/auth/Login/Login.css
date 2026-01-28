@@ -118,13 +118,12 @@
 .enroll-text {
     margin-top: 1.5rem;
     text-align: center;
-    color: #666;
-    font-size: 0.95rem;
+    color: #0D3E54 !important;
+    font-size: 18px !important;
 }
 
 .enroll-link {
-    color: #003366;
-    font-weight: 600;
+    color: #0D3E54 !important;
     text-decoration: none;
     margin-left: 0.5rem;
     border-bottom: 1px solid currentColor;
@@ -135,13 +134,7 @@
 }
 
 .login-submit-btn {
-    background-color: #003366 !important;
-    /* Enterprise Blue */
-    color: white !important;
-    padding: 12px 0 !important;
-    border-radius: 0 !important;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    font-size: 20px !important;
 }
 
 .login-submit-btn:hover {
