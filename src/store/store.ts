@@ -1,8 +1,6 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import storage from "redux-persist/lib/storage";
-// import themeSlice from "./theme.store";
 import authSlice from "./auth.store";
-// import sideBarSlice from "./sidebar.store";
 import {
   FLUSH,
   PAUSE,
@@ -23,9 +21,7 @@ const persistConfig = {
 const combinedReducers = persistReducer(
   persistConfig,
   combineReducers({
-    authSlice,
-    // themeSlice,
-    // sideBarSlice,
+    authSlice
   })
 );
 

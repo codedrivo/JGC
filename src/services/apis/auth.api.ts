@@ -22,7 +22,7 @@ type changePasswordData = {
 
 export const logInApi = catchAsync(async (values: LoginData) => {
   try {
-    const data = await httpsCall.post(`/lead/login`, values);
+    const data = await httpsCall.post(`/auth/login`, values);
     return data;
   } catch (error) {
     throw error;
@@ -31,21 +31,21 @@ export const logInApi = catchAsync(async (values: LoginData) => {
 
 export const forgotPasswordApi = catchAsync(
   async (values: ForgotPaawordData) => {
-    const data = await httpsCall.post(`/lead/forgot-password`, values);
+    const data = await httpsCall.post(`/auth/forgot-password`, values);
     return data;
   }
 );
 
 export const verifySecurityCodeApi = catchAsync(
   async (values: ForgotPaawordData) => {
-    const data = await httpsCall.post(`/lead/verify-otp`, values);
+    const data = await httpsCall.post(`/auth/verify-otp`, values);
     return data;
   }
 );
 
 export const resetPasswordApi = catchAsync(
   async (values: ResetPasswordData) => {
-    const data = await httpsCall.patch(`/lead/reset-password`, values);
+    const data = await httpsCall.patch(`/auth/reset-password`, values);
     return data;
   }
 );
@@ -53,7 +53,7 @@ export const resetPasswordApi = catchAsync(
 export const changePasswordApi = catchAsync(
   async (values: changePasswordData) => {
     const data = await httpsCall.patch(
-      `/lead/profile/change-password`,
+      `/auth/profile/change-password`,
       values
     );
     return data;
@@ -61,6 +61,6 @@ export const changePasswordApi = catchAsync(
 );
 
 export const dashboardApi = catchAsync(async (values: any) => {
-  const data = await httpsCall.get(`/lead/dashboard/get`, values);
+  const data = await httpsCall.get(`/auth/dashboard/get`, values);
   return data;
 });

@@ -51,16 +51,6 @@ export const lnameSchema = yup
   .string()
   .required(VALIDATION_MESSAGES.LAST_NAME);
 
-export const dobSchema = yup
-  .string()
-  .required(VALIDATION_MESSAGES.DOB);
-
-export const phoneSchema = yup
-  .string()
-  .required(VALIDATION_MESSAGES.PHONE);
-
-// support validation
-
-export const fullNameSchema = yup.string()
+export const companyNameSchema = yup.string()
   .trim()
-  .required(VALIDATION_MESSAGES.FULL_NAME);
+  .required(VALIDATION_MESSAGES.COMPANYNAME);

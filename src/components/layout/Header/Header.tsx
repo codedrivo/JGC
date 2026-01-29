@@ -5,9 +5,11 @@ import { LuSearch, LuChevronDown, LuMenu, LuX, LuChevronUp } from "react-icons/l
 import Button from "../../common/Button/Button";
 import logo from "../../../assets/logo.svg";
 import "./Header.css";
-
 import { Menu, MenuItem } from "@mui/material";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { logOut } from "../../../store/auth.store";
 
 interface HeaderProps {
   onSidebarToggle?: () => void;
@@ -17,6 +19,14 @@ const Header: React.FC<HeaderProps> = ({ onSidebarToggle }) => {
   const [isSearchOpen, setIsSearchOpen] = React.useState(false);
   const [isMobileNavOpen, setIsMobileNavOpen] = React.useState(false);
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+
+  const dispatch = useDispatch();
+    const navigate = useNavigate();
+    function logoutHandler() {
+        dispatch(logOut());
+        localStorage.clear();
+        navigate("/login");
+    }
 
   const isLoggedIn =
     window.location.pathname.includes('/admin') ||
@@ -157,8 +167,8 @@ const Header: React.FC<HeaderProps> = ({ onSidebarToggle }) => {
                   }}
                 >
                   { /*<MenuItem onClick={handleMenuClose} style={{ fontSize: '0.85rem' }}>Profile</MenuItem> */}
-                  <MenuItem component={Link} to="/my-account" onClick={handleMenuClose} style={{ fontSize: '0.85rem' }}>My Account</MenuItem>
-                  <MenuItem component={Link} to="/login"onClick={handleMenuClose} style={{ fontSize: '0.85rem' }}>Logout</MenuItem>
+                  <MenuItem component={Link} to="/client/my-account" onClick={handleMenuClose} style={{ fontSize: '0.85rem' }}>My Account</MenuItem>
+                  <MenuItem onClick={logoutHandler} style={{ fontSize: '0.85rem' }}>Logout</MenuItem>
                 </Menu>
               </>
             ) : (

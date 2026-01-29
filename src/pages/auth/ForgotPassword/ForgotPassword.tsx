@@ -3,10 +3,10 @@ import Footer from "../../../components/layout/Footer/Footer";
 import InputField from "../../../components/common/forms/Input/Input";
 import Button from "../../../components/common/Button/Button";
 import "./ForgotPassword.css";
-import { useNavigate } from "react-router-dom";
+import { useForgotPass } from "./useForgotPass";
 
 const ForgotPassword = () => {
-  const navigate = useNavigate();
+  const { forgotPassFormik } = useForgotPass();
   return (
     <div className="login-page-container">
       <Header />
@@ -23,25 +23,27 @@ const ForgotPassword = () => {
             <div className="login-form-container">
               <div className="brand-subtitle">INSIGHTS HUB</div>
               <h1 className="login-title">Forgot Password</h1>
-              <form>
+              <form onSubmit={forgotPassFormik.handleSubmit}>
                 <div className="form-fields">
-                  <InputField
+                   <InputField
                     id="email"
                     type="email"
                     fullWidth
                     placeholder="EMAIL"
                     variant="outlined"
                     className="custom-input"
+                    onChange={forgotPassFormik.handleChange}
+                    value={forgotPassFormik.values.email}
+                    errorMsg={forgotPassFormik.errors.email}
                   />
                 </div>
                 <div className="submit-btn-wrapper">
                   <Button
-                    //type="submit"
+                    type="submit"
                     fullWidth
                     variant="contained"
                     size="large"
                     className="login-submit-btn"
-                    onClick={() => navigate("/reset-password")}
                   >
                     SEND
                   </Button>

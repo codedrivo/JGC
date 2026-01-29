@@ -12,10 +12,5 @@ export const VALIDATION_MESSAGES = {
 
   FIRST_NAME: "First name is required",
   LAST_NAME: "Last name is required",
-  DOB: "DOB is required",
-  PHONE: "Phone number is required",
-
-  FULL_NAME: "Full name is required",
-
-
+  COMPANYNAME: "Full name is required",
 };

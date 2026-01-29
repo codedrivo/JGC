@@ -4,24 +4,13 @@ export type User = {
   firstName: string;
   lastName: string;
   email: string;
-  DOB: Date | null;
-  maritalStatus: string;
-  gender: string;
-  phoneNumber: string;
+  positionTitle: string;
+  
+  companyName: string;
+  customerID: string;
+  customerLevel: string;
+  customerStatus: string;
   role: string;
-  address: string;
-
-  notification: boolean;
-  isEmailVerified: boolean;
-  isAccountVerified: boolean;
-  profileimageurl: string;
-  about: any;
-
-  emailNotification: boolean;
-  textNotification: boolean;
-  pushNotification: boolean;
-  communicationPref: string;
-
 };
 
 export type AuthState = {

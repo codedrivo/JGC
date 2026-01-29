@@ -5,13 +5,13 @@ import menuicon2 from "../../../assets/sm2.svg";
 import menuicon3 from "../../../assets/sm3.svg";
 import menuicon4 from "../../../assets/sm4.svg";
 import {
-  BsFileText,
+  // BsFileText,
   BsPerson,
  // BsCreditCard,
   BsGraphUp,
   BsX,
-  BsChatDots,
-  BsQuestionCircle,
+  // BsChatDots,
+  // BsQuestionCircle,
   // BsShield,
   // BsFileLock
 } from "react-icons/bs";
@@ -53,7 +53,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
         {/* ================= ADMIN MENU ================= */}
         {isAdmin ? (
           <>
-            <Link to="/admin/reports" className={`sidebar-item ${isActive('/reports') ? 'active' : ''}`}>
+            <Link to="/admin/report-library" className={`sidebar-item ${isActive('/reports') ? 'active' : ''}`}>
               <img src={menuicon1} alt="Reports Icon" className="sidebar-icon-img" />
               <span className="sidebar-text">REPORT LIBRARY</span>
             </Link>
@@ -97,17 +97,17 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
         ) : (
           /* ================= CLIENT MENU ================= */
           <>
-            <Link to="/report-library" className={`sidebar-item ${isActive('/report-library') ? 'active' : ''}`}>
+            <Link to="/client/report-library" className={`sidebar-item ${isActive('/report-library') ? 'active' : ''}`}>
               <img src={menuicon1} alt="Reports Icon" className="sidebar-icon-img" />
               <span className="sidebar-text">REPORT LIBRARY</span>
             </Link>
 
-            <Link to="/ask-judy-ai" className={`sidebar-item ${isActive('/ask-judy-ai') ? 'active' : ''}`}>
+            <Link to="/client/ask-judy-ai" className={`sidebar-item ${isActive('/ask-judy-ai') ? 'active' : ''}`}>
               <img src={menuicon2} alt="Ask Judy AI Icon" className="sidebar-icon-img" />
               <span className="sidebar-text">ASK JUDY AI</span>
             </Link>
 
-            <Link to="/my-account" className={`sidebar-item ${isActive('/my-account') ? 'active' : ''}`}>
+            <Link to="/client/my-account" className={`sidebar-item ${isActive('/my-account') ? 'active' : ''}`}>
               <img src={menuicon3} alt="My Account Icon" className="sidebar-icon-img" />
               <span className="sidebar-text">MY ACCOUNT</span>
             </Link>
@@ -117,7 +117,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
               <span className="sidebar-text">BILLING</span>
             </Link> */ }
 
-            <Link to="/faq" className={`sidebar-item ${isActive('/faq') ? 'active' : ''}`}>
+            <Link to="/client/faq" className={`sidebar-item ${isActive('/faq') ? 'active' : ''}`}>
               <img src={menuicon4} alt="FAQ Icon" className="sidebar-icon-img" />
               <span className="sidebar-text">FAQ</span>
             </Link>
@@ -129,8 +129,8 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
       </div>
 
       <div className="sidebar-footer">
-        <Link to="/privacy">PRIVACY POLICY</Link>
-        <Link to="/terms">TERMS OF USE</Link>
+        <Link to="/client/privacy">PRIVACY POLICY</Link>
+        <Link to="/client/terms">TERMS OF USE</Link>
       </div>
     </aside>
   );

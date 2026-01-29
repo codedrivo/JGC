@@ -1,8 +1,5 @@
-"use client";
-
 import React, { useState } from "react";
 import {
-  TextField,
   OutlinedInput,
   InputAdornment,
   IconButton,
@@ -27,7 +24,7 @@ export type InputTypes =
 
 export interface InputFieldProps {
   id?: string;
-  label?: string; // ⭐ OPTIONAL
+  label?: string;
   labelIcon?: React.ReactNode | string;
   variant?: "outlined" | "filled" | "standard";
   type?: InputTypes;
@@ -38,6 +35,7 @@ export interface InputFieldProps {
   className?: string;
   inputClassName?: string;
   disabled?: boolean;
+  errorMsg?: string;
 }
 
 const InputField: React.FC<InputFieldProps> = ({
@@ -53,26 +51,23 @@ const InputField: React.FC<InputFieldProps> = ({
   className = "",
   inputClassName = "",
   disabled = false,
+  errorMsg,
   ...props
 }) => {
   const [showPassword, setShowPassword] = useState(false);
-
   const isPassword = type === "password";
   const togglePassword = () => setShowPassword((prev) => !prev);
 
   const renderLabelIcon = () => {
     if (!labelIcon) return null;
-
     if (typeof labelIcon === "string") {
       return <img src={labelIcon} alt="icon" className="input-label-icon" />;
     }
-
     return <span className="input-label-icon">{labelIcon}</span>;
   };
 
   return (
     <div className={`custom-form ${className}`}>
-      {/* ⭐ render only if label exists */}
       {label && (
         <Typography component="label" htmlFor={id} className="input-label">
           {renderLabelIcon()}
@@ -80,8 +75,8 @@ const InputField: React.FC<InputFieldProps> = ({
         </Typography>
       )}
 
-      {isPassword ? (
-        <FormControl variant={variant} fullWidth={fullWidth}>
+      <FormControl variant={variant} fullWidth={fullWidth}>
+        {isPassword ? (
           <OutlinedInput
             id={id}
             placeholder={placeholder}
@@ -99,21 +94,25 @@ const InputField: React.FC<InputFieldProps> = ({
             }
             {...props}
           />
-        </FormControl>
-      ) : (
-        <TextField
-          id={id}
-          type={type}
-          variant={variant}
-          fullWidth={fullWidth}
-          value={value}
-          onChange={onChange}
-          placeholder={placeholder}
-          disabled={disabled}
-          inputProps={{ className: inputClassName }}
-          {...props}
-        />
-      )}
+        ) : (
+          <OutlinedInput
+            id={id}
+            placeholder={placeholder}
+            type={type}
+            value={value}
+            onChange={onChange}
+            disabled={disabled}
+            className={inputClassName}
+            {...props}
+          />
+        )}
+
+        {errorMsg && (
+          <Typography color="error" variant="caption" style={{ marginTop: 4 }}>
+            {errorMsg}
+          </Typography>
+        )}
+      </FormControl>
     </div>
   );
 };
