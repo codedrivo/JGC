@@ -7,6 +7,7 @@ import AuthLayout from '../layouts/AuthLayout';
 // Auth pages
 import Login from '../pages/auth/Login/Login';
 import ForgotPassword from '../pages/auth/ForgotPassword/ForgotPassword';
+import VerifySecurityCode from '../pages/auth/ForgotPassword/VerifySecurityCode';
 import ResetPassword from '../pages/auth/ResetPassword/ResetPassword';
 
 // Public pages
@@ -32,6 +33,10 @@ const AppRoutes = () => {
 
       <Route path="/forgot-password" element={<AuthLayout />}>
         <Route index element={<ForgotPassword />} />
+      </Route>
+
+      <Route path="/verify-security-code" element={<AuthLayout />}>
+        <Route index element={<VerifySecurityCode />} />
       </Route>
 
       <Route path="/reset-password" element={<AuthLayout />}>

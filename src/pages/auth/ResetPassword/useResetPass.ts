@@ -1,6 +1,6 @@
 import { useFormik } from "formik";
 import * as yup from "yup";
-import { resetPasswordApi } from "../../../service/apis/auth.api";
+import { resetPasswordApi } from "../../../services/apis/auth.api";
 import { useNavigate } from "react-router-dom";
 import { confirmPasswordSchema, passwordSchema } from "../../../utils/yupSchemas";
 
