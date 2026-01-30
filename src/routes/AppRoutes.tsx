@@ -19,6 +19,8 @@ import Contact from '../pages/public/Contact/Contact';
 import AdminRoutes from './AdminRoutes';
 import ClientRoutes from './ClientRoutes';
 
+import RequireRole from './RequireRole';
+
 const AppRoutes = () => {
   return (
     <Routes>
@@ -48,14 +50,19 @@ const AppRoutes = () => {
       <Route path="/services" element={<Services />} />
       <Route path="/contact" element={<Contact />} />
 
-      {/* ================= ADMIN ================= */}
-      <Route path="/admin" element={<AdminLayout />}>
-        {AdminRoutes}
+
+      {/* ADMIN */}
+      <Route element={<RequireRole allowedRole="admin" />}>
+        <Route path="/admin" element={<AdminLayout />}>
+          {AdminRoutes}
+        </Route>
       </Route>
 
-      {/* ================= CLIENT ================= */}
-      <Route path="/client" element={<ClientLayout />}>
-        {ClientRoutes}
+      {/* CLIENT */}
+      <Route element={<RequireRole allowedRole="user" />}>
+        <Route path="/client" element={<ClientLayout />}>
+          {ClientRoutes}
+        </Route>
       </Route>
 
       {/* 404 */}
