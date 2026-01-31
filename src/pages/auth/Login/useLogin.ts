@@ -21,29 +21,38 @@ export const useLogin = () => {
       email: emailSchema,
       password: passwordSchema,
     }),
-    onSubmit: async (values) => {
-      setLoading(true);
-      try {
-        const bodyData = {
-          email: values.email,
-          password: values.password,
-        };
-        const response = await logInApi(bodyData);
-        setLoading(false);
-        dispatch(setUser(response?.data?.user));
-        localStorage.setItem("access_token", response?.data?.tokens.access);
-        localStorage.setItem("refresh_token", response?.data?.tokens.refresh);
-        const role = response?.data?.user?.role;
-        if (role === "admin") {
-          navigate("/admin/report-library");
-        } else {
-          navigate("/client/report-library");
-        }
-        setLoading(false);
-      } catch (error) {
-        setLoading(false);
-      }
-    },
+onSubmit: async (values) => {
+  setLoading(true);
+  try {
+    const bodyData = {
+      email: values.email,
+      password: values.password,
+    };
+
+    const response = await logInApi(bodyData);
+
+    const user = response?.data?.user;
+
+    // 🔴 ADD THIS (REQUIRED for RequireRole)
+    localStorage.setItem("user", JSON.stringify(user));
+
+    dispatch(setUser(user));
+
+    localStorage.setItem("access_token", response?.data?.tokens.access);
+    localStorage.setItem("refresh_token", response?.data?.tokens.refresh);
+
+    if (user?.role === "admin") {
+      navigate("/admin/report-library", { replace: true });
+    } else {
+      navigate("/client/report-library", { replace: true });
+    }
+
+  } catch (error) {
+    console.error(error);
+  } finally {
+    setLoading(false);
+  }
+},
   });
   return {
     loginFormik,
